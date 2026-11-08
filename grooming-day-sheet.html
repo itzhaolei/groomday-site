@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free printable dog grooming appointment book (weekly day sheet)</title>
+<meta name="description" content="A free printable weekly day sheet for solo dog groomers — 30-minute rows from 8am to 6pm, columns for dog, breed, service, time needed and notes. Print it, or use it as the layout checklist for any grooming day book app. No signup, no email.">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/grooming-day-sheet.html">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:title" content="Free printable dog grooming appointment book — weekly day sheet">
+<meta property="og:description" content="30-minute rows, 8am to 6pm, columns for dog, breed, service, time needed and notes. Print it free, no signup.">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/grooming-day-sheet.html">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="apple-touch-icon" href="img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.92);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:640px){ nav{display:none} }
+
+  main{padding:52px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(1.85rem,4.4vw,2.75rem);line-height:1.14;letter-spacing:-.025em;margin:0 0 16px}
+  .lede{color:var(--muted);font-size:1.06rem;margin:0 0 26px;max-width:40em}
+  h2{font-size:1.32rem;letter-spacing:-.015em;margin:46px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:24px 0;font-size:15.5px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0 6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:11px;font-weight:600;font-size:15.5px;border:0;cursor:pointer}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
+
+  /* ---------- printable sheet ---------- */
+  .sheet-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:26px 0 8px;overflow-x:auto}
+  .sheet{width:100%;min-width:640px;border-collapse:collapse;font-size:13px}
+  .sheet caption{text-align:left;font-weight:700;font-size:16px;padding-bottom:10px;letter-spacing:-.01em}
+  .sheet th,.sheet td{border:1px solid var(--line);padding:6px 7px;vertical-align:top}
+  .sheet thead th{background:var(--accent-soft);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;text-align:left;color:var(--accent)}
+  .sheet td.t{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;font-size:12px;background:#FCFCFA}
+  .sheet td.gap{height:26px}
+  .sheet tfoot td{border:0;padding-top:12px;font-size:12.5px;color:var(--muted)}
+  .sheet .line{height:1px;background:var(--line);margin-top:4px}
+
+  table.checks{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 6px}
+  table.checks th,table.checks td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left;vertical-align:top}
+  table.checks th{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+
+  @media print{
+    @page{size:A4 portrait;margin:12mm}
+    body{background:#fff;font-size:11pt}
+    header,nav,footer,.no-print{display:none !important}
+    main{padding:0}
+    .sheet-wrap{border:0;padding:0;margin:0;overflow:visible;border-radius:0}
+    .sheet{min-width:0;font-size:9.5pt}
+    .sheet th,.sheet td{padding:4px 5px}
+    .sheet thead th{background:#eee !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    h1,h2{page-break-after:avoid}
+    table{page-break-inside:auto}
+    tr{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">The app</a>
+      <a href="grooming-day-sheet.html">Free day sheet</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">Free tool · no signup</span>
+    <h1>A printable day sheet for one-chair dog grooming</h1>
+    <p class="lede">This is the paper layout most solo groomers already draw by hand: a whole day on one page, 30-minute rows from 8am to 6pm, and one line per dog. Print it, or use the columns as the checklist for whatever app you pick — including ours.</p>
+
+    <div class="btn-row no-print">
+      <button class="btn" onclick="window.print()">Print this sheet</button>
+      <a class="btn ghost" href="./">See the app version</a>
+    </div>
+    <p class="fineprint">Prints on one A4 page. Nothing is stored, nothing is sent, no email required.</p>
+
+    <div class="sheet-wrap">
+      <table class="sheet">
+        <caption>Grooming day sheet — day / date: ____________________  &nbsp; groomer: ____________________</caption>
+        <thead>
+          <tr>
+            <th style="width:64px">Time</th>
+            <th style="width:22%">Dog &amp; owner</th>
+            <th style="width:14%">Breed / coat</th>
+            <th style="width:20%">Service</th>
+            <th style="width:72px">Needed</th>
+            <th>Notes (matted? nervous? pick-up time?)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="t">8:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">8:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">9:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">9:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">10:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">10:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">11:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">11:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">12:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">12:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">1:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">1:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">2:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">2:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">3:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">3:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">4:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">4:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">5:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">5:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="t">6:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="6">
+            Day total: &nbsp;____ dogs &nbsp;·&nbsp; takings $ ________ &nbsp;·&nbsp; tips $ ________ &nbsp;·&nbsp; no-shows ____
+            <div class="line"></div>
+          </td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <h2>Why these five columns</h2>
+    <p>Most printable planners are built for meetings, so they waste the only two things a grooming day actually needs: <b>how long the dog takes</b> and <b>what happens next to that dog</b>. The columns above come from how a single groomer's day is really shaped:</p>
+    <table class="checks">
+      <thead>
+        <tr><th>Column</th><th>What it prevents</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Time</b> (30 min)</td><td>Quoting a 2pm slot to a walk-in when the 1:30 doodle is a 3-hour job.</td></tr>
+        <tr><td><b>Dog &amp; owner</b></td><td>Two "Bella"s on the same day, and calling the wrong number at pick-up.</td></tr>
+        <tr><td><b>Breed / coat</b></td><td>Re-quoting at the door because nobody wrote "matted underside" when booking.</td></tr>
+        <tr><td><b>Service</b></td><td>Doing a full groom when the owner booked a bath and brush.</td></tr>
+        <tr><td><b>Needed</b></td><td>The overlap you forgot: two dogs drying at once is fine, two dogs on the table is not.</td></tr>
+        <tr><td><b>Notes</b></td><td>Losing the one thing the owner cares about ("no clippers on the tail").</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How to use it without re-drawing it every week</h2>
+    <ol>
+      <li><b>Print a stack, not a page.</b> Ten copies live in a clipboard by the tub. A sheet that has to be found is a sheet that stops being used.</li>
+      <li><b>Book in pencil.</b> Pencil is what makes a paper book faster than a phone at the counter — and it is why paper survives the wet hands.</li>
+      <li><b>Write the time needed, not the time promised.</b> The gap between the two is where every overrun comes from. Note it at booking, and the day stops surprising you.</li>
+      <li><b>Copy the day's takings to one line at the bottom.</b> Five seconds at close, and you have a revenue record without a spreadsheet.</li>
+    </ol>
+
+    <div class="note">
+      <b>Where paper breaks.</b> A paper book cannot tell you that this dog was here six weeks ago, what you charged last time, or that the owner always pays by card. That is the only reason we built an app — not to replace the sheet's layout, but to keep the history behind it. If paper is working for you, keep using paper. <a href="./">GroomDay</a> is free to download and holds the same day view on an iPad, with a customer record behind each dog.
+    </div>
+
+    <h2>If you are comparing grooming apps</h2>
+    <p>Three questions decide it faster than any feature list:</p>
+    <ul>
+      <li><b>Can you see the whole day at once?</b> If the app opens on a list of clients, you will still keep paper next to it.</li>
+      <li><b>Does it handle overlap?</b> Solo groomers run a bath dog and a table dog at the same time; software built for one-at-a-time salons cannot express that.</li>
+      <li><b>Does it work with no signal?</b> Grooming rooms are often the worst coverage in the building.</li>
+    </ul>
+    <p>GroomDay answers yes to those three and deliberately does less elsewhere: no staff scheduling, no online booking page, no Android version yet. If you have employees, a salon-platform product will serve you better.</p>
+
+    <div class="btn-row no-print" style="margin-top:26px">
+      <a class="btn" href="https://apps.apple.com/app/id6827575268">Download GroomDay (free)</a>
+      <button class="btn ghost" onclick="window.print()">Print the sheet</button>
+    </div>
+    <p class="fineprint">iPad and iPhone · free download · Pro unlock is a one-time in-app purchase · no account, no subscription.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    GroomDay — a day book for solo pet groomers. <a href="./">Home</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "How to keep a dog grooming day book on paper",
+      "description": "Use a printable weekly day sheet with 30-minute rows and five columns to run a one-chair grooming day without overbooking.",
+      "totalTime": "PT5M",
+      "tool": [{ "@type": "HowToTool", "name": "Printed day sheet" }, { "@type": "HowToTool", "name": "Pencil" }],
+      "step": [
+        { "@type": "HowToStep", "name": "Print a stack", "text": "Print ten copies and keep them on a clipboard by the tub so the sheet is always within reach." },
+        { "@type": "HowToStep", "name": "Book in pencil", "text": "Write bookings in pencil so changes at the counter take seconds." },
+        { "@type": "HowToStep", "name": "Record time needed, not time promised", "text": "At booking, write how long the groom actually takes. Overruns come from the gap between the two numbers." },
+        { "@type": "HowToStep", "name": "Total the day", "text": "At close, write the day's takings and tips on the bottom line to keep a revenue record." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this grooming appointment book really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The page prints directly from the browser, there is no signup, no email and no download required." }
+        },
+        {
+          "@type": "Question",
+          "name": "What columns should a dog grooming day sheet have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Time in 30-minute rows, dog and owner, breed and coat, service booked, time needed, and notes. The time-needed column is the one that prevents overbooking." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an app if I use paper?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not for the day itself. An app earns its place when you need history per dog, repeat pricing, or revenue totals without re-adding a paper stack." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
