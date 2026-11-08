@@ -88,12 +88,17 @@
     main{padding:0}
     .sheet-wrap{border:0;padding:0;margin:0;overflow:visible;border-radius:0}
     .sheet{min-width:0;font-size:9.5pt}
-    .sheet th,.sheet td{padding:4px 5px}
+    .sheet th,.sheet td{padding:4px 5px;height:36px}
     .sheet thead th{background:#eee !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     h1,h2{page-break-after:avoid}
     table{page-break-inside:auto}
     tr{page-break-inside:avoid}
+    /* 只打印表格本体：文章正文、按钮、导航一律不上纸 */
+    main .wrap > *:not(.sheet-wrap):not(h1):not(.print-credit){display:none !important}
+    h1{font-size:15pt;margin:0 0 10px}
+    .print-credit{display:block !important;font-size:8.5pt;color:#555;margin:6px 0 0}
   }
+  .print-credit{display:none}
 </style>
 </head>
 <body>
@@ -123,7 +128,7 @@
 
     <div class="sheet-wrap">
       <table class="sheet">
-        <caption>Grooming day sheet — day / date: ____________________  &nbsp; groomer: ____________________</caption>
+        <caption>Grooming day sheet &nbsp;·&nbsp; date: ____________ &nbsp;·&nbsp; groomer: ____________</caption>
         <thead>
           <tr>
             <th style="width:64px">Time</th>
@@ -165,6 +170,8 @@
         </tfoot>
       </table>
     </div>
+
+    <p class="print-credit">Free printable day sheet from GroomDay — itzhaolei.github.io/groomday-site/grooming-day-sheet.html</p>
 
     <h2>Why these five columns</h2>
     <p>Most printable planners are built for meetings, so they waste the only two things a grooming day actually needs: <b>how long the dog takes</b> and <b>what happens next to that dog</b>. The columns above come from how a single groomer's day is really shaped:</p>
