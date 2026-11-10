@@ -58,13 +58,14 @@
 
   /* ---------- calculator ---------- */
   .calc{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start;margin:26px 0 10px}
+  .calc > .panel{min-width:0}
   @media (max-width:820px){ .calc{grid-template-columns:1fr} }
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
   .panel h2{margin:0 0 4px;font-size:1.05rem;letter-spacing:-.01em}
   .panel .sub{color:var(--muted);font-size:14px;margin:0 0 18px}
   .field{margin-bottom:16px}
   .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  select,input[type=number]{width:100%;font:inherit;font-size:15.5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  select,input[type=number]{width:100%;min-width:0;max-width:100%;font:inherit;font-size:15.5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
   select:focus,input:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
   .addons{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:4px}
   @media (max-width:520px){ .addons{grid-template-columns:1fr} }
@@ -86,7 +87,9 @@
   .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
   .fineprint{font-size:13.5px;color:var(--muted);margin-top:8px}
 
-  table.ref{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0 6px;background:var(--card)}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 6px;border-radius:10px}
+  table.ref{width:100%;border-collapse:collapse;font-size:14.5px;margin:0;background:var(--card)}
+  @media (max-width:600px){ table.ref{font-size:13px} table.ref th,table.ref td{padding:7px 8px} }
   table.ref th,table.ref td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
   table.ref thead th{background:var(--accent-soft);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);font-weight:600}
   table.ref td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -109,6 +112,7 @@
     h1{font-size:16pt;margin:0 0 4px}
     h2{font-size:12pt;margin:14pt 0 4pt}
     .print-only{display:block !important}
+    .table-scroll{overflow:visible}
     table.ref{font-size:9.5pt}
     table.ref th,table.ref td{padding:5px 6px}
   }
@@ -226,6 +230,7 @@
     <div class="ref-wrap">
       <h2>Reference table — typical US ranges</h2>
       <p>Sanity-check the calculator against the ranges below. They are the published averages for independent shops, not a rule: a mobile van, a city centre salon and a rural one-chair room are three different businesses.</p>
+      <div class="table-scroll">
       <table class="ref">
         <thead>
           <tr><th>Service</th><th>Small</th><th>Medium</th><th>Large</th><th>Giant</th><th>Typical time</th></tr>
@@ -239,6 +244,7 @@
           <tr><td>Nail trim only</td><td class="n">$10–15</td><td class="n">$12–18</td><td class="n">$15–20</td><td class="n">$18–25</td><td class="n">0.2 h</td></tr>
         </tbody>
       </table>
+      </div>
       <p class="fineprint">Figures compiled from published 2025–2026 US price guides and shop rate cards. Local prices vary widely; treat them as a starting point to argue with, not a benchmark to match.</p>
     </div>
 
