@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set Up a Dog Grooming Day Book in 7 Days — free step-by-step plan</title>
+<meta name="description" content="A one-week plan to get a solo dog groomer's day book working: client list, prices, weekly blocks, vaccination dates, reminders and a backup. 15–30 minutes a day, no signup.">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/7-day-daybook-setup.html">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:title" content="Set up a dog grooming day book in 7 days">
+<meta property="og:description" content="One small task a day for a week: client list, prices, weekly blocks, vaccine dates, reminders, backup. Free, no signup.">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/7-day-daybook-setup.html">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="apple-touch-icon" href="img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.92);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:640px){ nav{display:none} }
+
+  main{padding:48px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(1.8rem,4.2vw,2.6rem);line-height:1.14;letter-spacing:-.025em;margin:0 0 14px}
+  .lede{color:var(--muted);font-size:1.05rem;margin:0 0 26px;max-width:42em}
+  h2{font-size:1.3rem;letter-spacing:-.015em;margin:44px 0 12px}
+  h3{font-size:1.02rem;margin:22px 0 6px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:7px}
+
+  .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 8px}
+  @media (max-width:640px){ .summary{grid-template-columns:1fr} }
+  .summary div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .summary b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;font-weight:600}
+  .summary span{font-size:.97rem}
+
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:0 0 14px}
+  .day .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;margin-right:9px;vertical-align:1px}
+  .day h3{display:inline;margin:0;font-size:1.06rem;letter-spacing:-.01em}
+  .day .time{display:block;color:var(--muted);font-size:13.5px;margin:8px 0 10px}
+  .day p:last-child{margin-bottom:0}
+  .why{color:var(--muted);font-size:.95rem;border-left:2px solid var(--accent-soft);padding-left:12px;margin:12px 0 0}
+
+  .note{background:var(--accent-soft);border-radius:12px;padding:16px 18px;margin:26px 0;font-size:.97rem}
+  .note p:last-child{margin-bottom:0}
+
+  .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:26px 0 0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+    padding:12px 20px;border-radius:12px;font-size:15.5px}
+  .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+
+  table{width:100%;border-collapse:collapse;font-size:.95rem;margin:6px 0 18px;background:var(--card)}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:none}
+
+  details{border-bottom:1px solid var(--line);padding:14px 0}
+  summary{cursor:pointer;font-weight:600;font-size:1rem}
+  details p{margin:10px 0 0;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}
+  footer a{color:var(--muted)}
+
+  @media print{
+    header,footer,.cta,.summary,nav{display:none}
+    body{background:#fff}
+    .day{break-inside:avoid;border:1px solid #ccc;box-shadow:none}
+    main{padding:0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">The app</a>
+      <a href="grooming-price-calculator.html">Price calculator</a>
+      <a href="grooming-day-sheet.html">Free day sheet</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="eyebrow">7-day plan</span>
+  <h1>Set up your grooming day book in seven days</h1>
+  <p class="lede">Most solo groomers don't lose bookings because they're bad at grooming — they lose them because the book is in three places at once: a paper diary, a phone calendar and a notebook of client notes. This is a one-week plan to fix that. One small task a day, 15 to 30 minutes each, nothing to sign up for.</p>
+
+  <div class="summary">
+    <div><b>Time per day</b><span>15–30 min</span></div>
+    <div><b>Total</b><span>About 2.5 hours</span></div>
+    <div><b>Cost</b><span>Free (paper or the app)</span></div>
+  </div>
+
+  <h2>The week at a glance</h2>
+  <table>
+    <thead><tr><th>Day</th><th>Task</th><th>What you end up with</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>List every client and pet</td><td>One source of truth for names, numbers and breeds</td></tr>
+      <tr><td>2</td><td>Write down what you actually charge</td><td>A price per service, not a price per mood</td></tr>
+      <tr><td>3</td><td>Block one normal week</td><td>A realistic day, including travel and cleanup</td></tr>
+      <tr><td>4</td><td>Add vaccination dates</td><td>No more "is the rabies shot current?" texts</td></tr>
+      <tr><td>5</td><td>Set up reminders</td><td>Re-bookings that happen without chasing</td></tr>
+      <tr><td>6</td><td>Group multi-pet households</td><td>One family, several pets, one phone number</td></tr>
+      <tr><td>7</td><td>Back it up and close the loop</td><td>A book you can lose your phone and keep</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Day by day</h2>
+
+  <div class="day">
+    <span class="n">1</span><h3>List every client and pet</h3>
+    <span class="time">20–30 minutes</span>
+    <p>Go through your phone, your messages and your paper diary and write one line per pet: owner name, phone, pet name, breed, and roughly how often they come in. Don't clean it up yet — just get everyone out of your head and into one place.</p>
+    <p class="why">Why first: every other day depends on this list, and the list itself is the thing you currently don't have.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">2</span><h3>Write down what you actually charge</h3>
+    <span class="time">15–25 minutes</span>
+    <p>For each service — full groom, bath and tidy, bath and brush, de-shed, puppy first visit — note the price you charged the last three times. You'll usually find two or three prices for the same job. Pick one and write it down.</p>
+    <p class="why">If you're not sure what to charge, the <a href="grooming-price-calculator.html">price calculator</a> turns size, coat and service into a range plus the hours the job really takes.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">3</span><h3>Block one normal week</h3>
+    <span class="time">20 minutes</span>
+    <p>Open a blank week and fill it as if it were a real one: grooming slots, the gap for drying, lunch, the school run, the last appointment that always overruns. Be honest about how many dogs fit in a day — most solo groomers overestimate by one.</p>
+    <p class="why">A schedule you can't keep is worse than no schedule. One honest week becomes the template you repeat.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">4</span><h3>Add vaccination dates</h3>
+    <span class="time">20–30 minutes</span>
+    <p>For each pet, write the rabies expiry date, and bordetella and DHPP if you require them. Then mark which ones fall in the next 30 days. This is the step most paper books skip, and the one that causes the awkward conversation at the door.</p>
+    <p class="why">Some states and many salons require current rabies before a dog is on the table. A date you can see beats a certificate in a drawer.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">5</span><h3>Set up reminders</h3>
+    <span class="time">15 minutes</span>
+    <p>Write one reminder message you're happy to send — short, warm, with the rebooking interval built in ("Rocco is due around the 14th, want the usual slot?"). Then send it to the three clients who are closest to due.</p>
+    <p class="why">Re-bookings are the cheapest bookings you'll ever get. You don't need a marketing system, you need one sentence and a habit.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">6</span><h3>Group multi-pet households</h3>
+    <span class="time">15 minutes</span>
+    <p>Two dogs from one family should sit together: same phone number, same address, same vaccine requirements, one visit. Merge the duplicate entries you created on Day 1 — most groomers find two or three.</p>
+    <p class="why">Households are how you stop re-typing a phone number every time a second dog is added, and how you see the family's whole day at once.</p>
+  </div>
+
+  <div class="day">
+    <span class="n">7</span><h3>Back it up and close the loop</h3>
+    <span class="time">15 minutes</span>
+    <p>If it's paper: photograph the pages, or keep a duplicate in a second place. If it's an app: check that the data lives somewhere you can restore from, and that it isn't behind an account you don't control. Then print a fresh week and put it where you work.</p>
+    <p class="why">The day book is the business. Losing it is the one failure that costs a season, not an afternoon.</p>
+  </div>
+
+  <div class="note">
+    <p><strong>Doing this in GroomDay instead of on paper?</strong> The whole plan maps onto the app: Day 1 is the client list, Day 2 sets service prices, Day 4 is the vaccine record with 30-day warnings, Day 5 opens your Messages app with the reminder already written, and Day 6 is the household grouping. Everything is stored on the device — no account, no sync server, no subscription.</p>
+    <p style="margin-top:10px">Not ready to commit? Take the <a href="grooming-day-sheet.html">free printable day sheet</a> and start with Day 3 on paper.</p>
+  </div>
+
+  <h2>Print the checklist</h2>
+  <p>This page prints as a clean one-week checklist — the header, buttons and summary are hidden when you print.</p>
+  <div class="cta">
+    <a class="btn" href="https://apps.apple.com/app/id6827575268">Get GroomDay — $2.99 once</a>
+    <a class="btn ghost" href="grooming-day-sheet.html">Free printable day sheet</a>
+  </div>
+
+  <h2>Questions</h2>
+  <details>
+    <summary>Do I need an app to do this?</summary>
+    <p>No. The plan works on paper, in a spreadsheet or in any calendar. The app simply keeps the seven pieces in one place and adds the vaccine warnings and reminder text for you.</p>
+  </details>
+  <details>
+    <summary>How long does the whole week take?</summary>
+    <p>About two and a half hours in total, spread over seven days. Days 1 and 4 are the longest at 20–30 minutes; the rest are 15 minutes.</p>
+  </details>
+  <details>
+    <summary>What if I already have a book that works?</summary>
+    <p>Then keep it. The only steps worth borrowing are Day 4 (vaccination dates with a 30-day warning) and Day 6 (grouping pets by household) — those are the two that paper books most often miss.</p>
+  </details>
+  <details>
+    <summary>Why seven days instead of one afternoon?</summary>
+    <p>Because a book built in one sitting gets abandoned in a week. One task a day, each small enough to finish, is what makes the habit stick.</p>
+  </details>
+</main>
+
+<footer>
+  <div class="wrap">
+    GroomDay — the day book for solo dog groomers. ·
+    <a href="./">The app</a> ·
+    <a href="grooming-day-sheet.html">Free day sheet</a> ·
+    <a href="support.html">Support</a> ·
+    <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Set up a dog grooming day book in 7 days",
+      "description": "A one-week plan for a solo dog groomer: client list, prices, weekly blocks, vaccination dates, reminders, multi-pet households and a backup.",
+      "totalTime": "P7D",
+      "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "List every client and pet", "text": "Write one line per pet: owner name, phone, pet name, breed and how often they come in." },
+        { "@type": "HowToStep", "position": 2, "name": "Write down what you actually charge", "text": "For each service note the price charged the last three times, then pick one price per service." },
+        { "@type": "HowToStep", "position": 3, "name": "Block one normal week", "text": "Fill a blank week realistically, including drying, lunch, travel and the appointment that always overruns." },
+        { "@type": "HowToStep", "position": 4, "name": "Add vaccination dates", "text": "Record rabies expiry and any other required vaccines, then mark the ones falling in the next 30 days." },
+        { "@type": "HowToStep", "position": 5, "name": "Set up reminders", "text": "Write one short rebooking message and send it to the three clients closest to due." },
+        { "@type": "HowToStep", "position": 6, "name": "Group multi-pet households", "text": "Merge duplicate entries so pets from one family share a phone number, address and visit." },
+        { "@type": "HowToStep", "position": 7, "name": "Back it up and close the loop", "text": "Store a duplicate copy somewhere recoverable and print a fresh week for the workspace." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need an app to set up a grooming day book?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The plan works on paper, in a spreadsheet or in any calendar. An app simply keeps the client list, prices, vaccine dates and reminders in one place." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to set up a grooming day book?",
+          "acceptedAnswer": { "@type": "Answer", "text": "About two and a half hours in total, spread across seven days. The longest days are the client list and the vaccination dates at 20 to 30 minutes each." }
+        },
+        {
+          "@type": "Question",
+          "name": "What should a dog grooming day book include?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Client and pet details, the price per service, the week's booked slots, vaccination expiry dates with a warning window, and a reminder routine for rebookings." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "GroomDay", "item": "https://itzhaolei.github.io/groomday-site/" },
+        { "@type": "ListItem", "position": 2, "name": "7-day day book setup", "item": "https://itzhaolei.github.io/groomday-site/7-day-daybook-setup.html" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
