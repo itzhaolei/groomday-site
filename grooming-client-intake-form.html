@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free printable dog grooming client intake form (first-visit + consent)</title>
+<meta name="description" content="A free printable intake form for dog groomers: owner and pet details, vaccination and health notes, coat and behaviour, service and quote, two separate photo-consent boxes, and a signature block. One page per pet, prints from the browser, no signup.">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/grooming-client-intake-form.html">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:title" content="Free printable dog grooming client intake form">
+<meta property="og:description" content="Owner, pet, health, coat, quote, photo consent and signature on one printable page. No signup.">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/grooming-client-intake-form.html">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="apple-touch-icon" href="img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.92);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:640px){ nav{display:none} }
+
+  main{padding:52px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(1.85rem,4.4vw,2.75rem);line-height:1.14;letter-spacing:-.025em;margin:0 0 16px}
+  .lede{color:var(--muted);font-size:1.06rem;margin:0 0 26px;max-width:40em}
+  h2{font-size:1.32rem;letter-spacing:-.015em;margin:46px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:24px 0;font-size:15.5px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0 6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:11px;font-weight:600;font-size:15.5px;border:0;cursor:pointer}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
+
+  /* ---------- printable form ---------- */
+  .form-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin:26px 0 8px}
+  .form-title{font-size:17px;font-weight:700;letter-spacing:-.01em;margin:0 0 2px}
+  .form-sub{font-size:12.5px;color:var(--muted);margin:0 0 16px}
+  .sec{margin:0 0 16px;break-inside:avoid;page-break-inside:avoid}
+  .sec h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:0 0 6px;font-weight:700}
+  table.f{width:100%;border-collapse:collapse;table-layout:fixed}
+  table.f td{border:1px solid var(--line);padding:5px 8px 4px;vertical-align:top;height:44px}
+  table.f .lab{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600;line-height:1.3}
+  table.f .hint{display:block;font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+  .boxes{font-size:13px;line-height:1.9}
+  .box{display:inline-block;width:11px;height:11px;border:1px solid #999;margin-right:5px;vertical-align:-1px}
+  .sign{margin-top:14px;font-size:12.5px;color:var(--muted)}
+  .sign table.f td{height:52px}
+  .consent{font-size:12px;line-height:1.55;color:#333;margin:10px 0 0}
+  .consent li{margin-bottom:5px}
+  table.checks{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 6px}
+  table.checks th,table.checks td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left;vertical-align:top}
+  table.checks th{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+
+  @media print{
+    @page{size:A4 portrait;margin:11mm}
+    body{background:#fff;font-size:10.5pt}
+    header,nav,footer,.no-print{display:none !important}
+    main{padding:0}
+    .form-wrap{border:0;padding:0;margin:0;border-radius:0}
+    /* 只打印表单本体 */
+    main .wrap > *:not(.form-wrap):not(h1):not(.print-credit){display:none !important}
+    h1{display:none !important}
+    .sec{margin:0 0 8px}
+    .sec h4{font-size:8pt;margin-bottom:3px}
+    table.f td{height:34px;padding:3px 6px}
+    table.f .lab{font-size:7.5pt}
+    table.f .hint{font-size:7pt}
+    .boxes{font-size:8.5pt;line-height:1.6}
+    .consent{font-size:7.5pt;line-height:1.4}
+    .sign{margin-top:8px}
+    .sign table.f td{height:40px}
+    .print-credit{display:block !important;font-size:7.5pt;color:#555;margin:8px 0 0}
+  }
+  .print-credit{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">The app</a>
+      <a href="grooming-price-calculator.html">Price calculator</a>
+      <a href="grooming-day-sheet.html">Free day sheet</a>
+      <a href="grooming-client-intake-form.html">Intake form</a>
+      <a href="7-day-daybook-setup.html">7-day plan</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">Free form · no signup</span>
+    <h1>A printable intake form for a new grooming client</h1>
+    <p class="lede">One page per pet, filled in at the first visit and kept behind the dog's record from then on. It asks the things that get argued about later — the matted coat, the vaccination date, the photo on Instagram — and it separates consent to take a photo from consent to publish one.</p>
+
+    <div class="btn-row no-print">
+      <button class="btn" onclick="window.print()">Print the intake form</button>
+      <a class="btn ghost" href="grooming-day-sheet.html">Also: the day sheet</a>
+    </div>
+    <p class="fineprint">Prints on one A4 page. Nothing is stored, nothing is sent, no email required. Not legal advice — check what your county or state requires.</p>
+
+    <div class="form-wrap">
+      <p class="form-title">New client intake &amp; grooming consent</p>
+      <p class="form-sub">Date ____________ &nbsp;·&nbsp; Groomer ____________ &nbsp;·&nbsp; Visit # ____</p>
+
+      <div class="sec">
+        <h4>1 · Owner</h4>
+        <table class="f">
+          <tr>
+            <td style="width:38%"><span class="lab">Name</span></td>
+            <td style="width:30%"><span class="lab">Mobile</span></td>
+            <td style="width:32%"><span class="lab">Email</span></td>
+          </tr>
+          <tr>
+            <td><span class="lab">Preferred contact</span><span class="boxes"><span class="box"></span>Text <span class="box"></span>Call <span class="box"></span>Email</span></td>
+            <td colspan="2"><span class="lab">Emergency contact / second number</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sec">
+        <h4>2 · Pet</h4>
+        <table class="f">
+          <tr>
+            <td style="width:30%"><span class="lab">Name</span></td>
+            <td style="width:26%"><span class="lab">Breed</span></td>
+            <td style="width:14%"><span class="lab">Age</span></td>
+            <td style="width:16%"><span class="lab">Weight</span></td>
+            <td style="width:14%"><span class="lab">Sex</span></td>
+          </tr>
+          <tr>
+            <td colspan="2"><span class="lab">Coat type</span><span class="boxes"><span class="box"></span>Short <span class="box"></span>Double <span class="box"></span>Curly/wool <span class="box"></span>Wiry</span></td>
+            <td colspan="3"><span class="lab">Matting today</span><span class="boxes"><span class="box"></span>None <span class="box"></span>Light <span class="box"></span>Heavy / pelted</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sec">
+        <h4>3 · Health</h4>
+        <table class="f">
+          <tr>
+            <td style="width:33%"><span class="lab">Rabies vaccination date</span></td>
+            <td style="width:33%"><span class="lab">DHPP / bordetella date</span></td>
+            <td style="width:34%"><span class="lab">Vet name &amp; phone</span></td>
+          </tr>
+          <tr>
+            <td colspan="2"><span class="lab">Conditions, medication, allergies (skin, ears, hips, heart)</span></td>
+            <td><span class="boxes"><span class="box"></span>Senior (8+) <span class="box"></span>Puppy<br><span class="box"></span>Pregnant / nursing <span class="box"></span>None known</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sec">
+        <h4>4 · Behaviour</h4>
+        <table class="f">
+          <tr>
+            <td style="width:50%"><span class="lab">Has been groomed before?</span><span class="boxes"><span class="box"></span>First time <span class="box"></span>Regular</span><br><span class="lab" style="margin-top:4px">Reacts to</span><span class="boxes"><span class="box"></span>Dryer <span class="box"></span>Nails <span class="box"></span>Ears <span class="box"></span>Other dogs</span></td>
+            <td style="width:50%"><span class="lab">Bites, snaps or guards — what triggers it</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sec">
+        <h4>5 · Today's service &amp; quote</h4>
+        <table class="f">
+          <tr>
+            <td style="width:34%"><span class="lab">Service</span><span class="boxes"><span class="box"></span>Bath/brush <span class="box"></span>Full groom <span class="box"></span>Trim <span class="box"></span>Nails/ears</span></td>
+            <td style="width:33%"><span class="lab">Length / style notes</span></td>
+            <td style="width:33%"><span class="lab">Quoted price</span></td>
+          </tr>
+          <tr>
+            <td><span class="lab">Realistic time needed</span></td>
+            <td><span class="lab">Promised pick-up time</span></td>
+            <td><span class="lab">Deposit taken / payment method</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sec">
+        <h4>6 · Photos — two separate answers</h4>
+        <table class="f">
+          <tr>
+            <td style="width:50%"><span class="lab">Before/after photos for my records</span><span class="boxes"><span class="box"></span>Yes <span class="box"></span>No</span><span class="hint">Kept with the pet's history, shown to the owner only.</span></td>
+            <td style="width:50%"><span class="lab">May I publish them (social, website)?</span><span class="boxes"><span class="box"></span>Yes, no name <span class="box"></span>Yes, with name <span class="box"></span>No</span><span class="hint">Separate from the box on the left. Ticking one never implies the other.</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <p class="consent">I understand and agree:</p>
+      <ul class="consent">
+        <li>Heavy matting may need to be shaved off rather than brushed out, and this can expose thin or irritated skin. It is done for the dog's comfort, not as a style choice.</li>
+        <li>Pre-existing conditions (skin, ears, eyes, joints, age) are disclosed above and are not caused by grooming.</li>
+        <li>If the dog becomes unwell or injured, I authorise a vet visit up to $________ and I will pay that cost.</li>
+        <li>Late pick-up beyond 30 minutes may incur a sitting fee of $________.</li>
+        <li>I may cancel the two photo consents above at any time, in writing or by text.</li>
+      </ul>
+
+      <div class="sign">
+        <table class="f">
+          <tr>
+            <td style="width:52%"><span class="lab">Owner signature</span></td>
+            <td style="width:24%"><span class="lab">Date</span></td>
+            <td style="width:24%"><span class="lab">Groomer signature</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <p class="print-credit">Free client intake form from GroomDay — itzhaolei.github.io/groomday-site/grooming-client-intake-form.html</p>
+
+    <h2>Why the form is one page per pet, not per owner</h2>
+    <p>Most intake forms are built around the household, so a second dog gets a second blank page and half the fields are filled in twice — or skipped. Keeping the owner block identical and the pet block separate means the interesting parts (coat, behaviour, matting, vaccine dates) stay accurate per dog, while the phone number and the payment habit only live in one place. If you run a paper system, that is a plastic sleeve per pet with the owner sheet clipped behind the first one.</p>
+
+    <h2>Six fields that prevent the arguments</h2>
+    <table class="checks">
+      <thead>
+        <tr><th>Field</th><th>The conversation it saves</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Matting level</b> (none / light / heavy)</td><td>"You shaved my dog" — recorded before the clippers come out, with the shave-down clause signed.</td></tr>
+        <tr><td><b>Vaccination date</b>, not just "up to date"</td><td>A kennel-cough outbreak in your own salon, and no way to tell which dogs were covered.</td></tr>
+        <tr><td><b>Realistic time needed</b> vs promised pick-up</td><td>The 4pm phone call while you are still drying a doodle.</td></tr>
+        <tr><td><b>Bite triggers</b></td><td>The second visit, when the dog remembers and you don't.</td></tr>
+        <tr><td><b>Two photo boxes</b></td><td>"You put my dog on Instagram" when the owner only agreed to a before/after for the file.</td></tr>
+        <tr><td><b>Vet spend cap</b></td><td>Standing in a clinic deciding someone else's $400 without written authority.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How to use it on the first visit</h2>
+    <ol>
+      <li><b>Send it before the appointment if you can.</b> Ten minutes at the kitchen table beats ten minutes in your reception area with a nervous dog.</li>
+      <li><b>Fill the quote and the time needed in front of the owner.</b> The number they hear at drop-off is the number they accept at pick-up.</li>
+      <li><b>Photograph the signed page and attach it to the pet's record.</b> Paper in a sleeve gets wet; a photo of the page survives, and it is what you want if a charge is disputed months later.</li>
+      <li><b>Re-check sections 3 and 6 at every visit.</b> Vaccines expire, and a photo consent given in March is not consent in December.</li>
+    </ol>
+
+    <div class="note">
+      <b>Where paper breaks.</b> A signed page in a sleeve cannot tell you that the rabies shot expires next month, that this dog bit during nails last time, or which of three dogs at the same address is the one on the table. Those are the parts we put in <a href="./">GroomDay</a> — vaccination expiry warnings, the bite note on the pet's timeline, and several pets grouped under one owner so the phone number is only typed once. The form above still works on its own; the app just keeps what the form learns.
+    </div>
+
+    <h2>Questions groomers ask about intake forms</h2>
+    <h3>What has to be on a dog grooming intake form?</h3>
+    <p>Owner contact, the pet's identity and coat, vaccination dates, known health conditions, behaviour triggers, the service and quoted price, photo consent, and a signature. Anything that can turn into a dispute — matting, existing skin conditions, vet authorisation — needs to be on the page the owner signs, not in a text message.</p>
+
+    <h3>Is a signed consent form legally required?</h3>
+    <p>It depends on where you work; some places regulate grooming businesses and some do not. The practical reason to have one is evidence: a signed page showing the matting was recorded and the shave-down was agreed is worth more than a memory of the conversation. Check your local requirements before relying on any template, including this one.</p>
+
+    <h3>Do I need separate permission to post grooming photos?</h3>
+    <p>Yes — treat "photos for my records" and "photos on my Instagram" as two different permissions, and let the owner tick them separately. Publishing is the one people withdraw, and a single combined box means a withdrawn consent takes the record photos with it.</p>
+
+    <h3>Can I use this form for cats or other pets?</h3>
+    <p>The field structure holds; change "breed" to species and drop the coat boxes that do not apply. The consent clauses are written for dogs and should be reviewed if you groom other animals.</p>
+
+    <div class="btn-row no-print" style="margin-top:26px">
+      <a class="btn" href="https://apps.apple.com/app/id6827575268">Download GroomDay (free)</a>
+      <a class="btn ghost" href="grooming-price-calculator.html">Work out the quote first</a>
+    </div>
+    <p class="fineprint">iPad and iPhone · free download · Pro unlock is a one-time in-app purchase · no account, no subscription.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    GroomDay — a day book for solo pet groomers. <a href="./">Home</a> · <a href="grooming-day-sheet.html">Free day sheet</a> · <a href="grooming-price-calculator.html">Price calculator</a> · <a href="7-day-daybook-setup.html">7-day plan</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What has to be on a dog grooming intake form?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Owner contact, the pet's identity and coat, vaccination dates, known health conditions, behaviour triggers, the service and quoted price, photo consent and a signature. Anything that can become a dispute — matting, existing skin conditions, vet authorisation — belongs on the page the owner signs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a signed grooming consent form legally required?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on local rules. The practical value is evidence: a signed page recording the matting level and the agreed shave-down is stronger than a remembered conversation. Check your local requirements before relying on any template." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need separate permission to post grooming photos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Treat photos for your records and photos published on social media as two separate permissions, ticked separately, so a withdrawn publication consent does not remove the record photos." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the intake form be used for cats or other pets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The field structure holds if you change breed to species and drop coat boxes that do not apply. The consent clauses are written for dogs and should be reviewed for other animals." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the printable intake form free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It prints straight from the browser, one A4 page, with no signup, email or download." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "GroomDay", "item": "https://itzhaolei.github.io/groomday-site/" },
+        { "@type": "ListItem", "position": 2, "name": "Dog grooming client intake form", "item": "https://itzhaolei.github.io/groomday-site/grooming-client-intake-form.html" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
