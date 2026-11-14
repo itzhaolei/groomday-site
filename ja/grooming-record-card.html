@@ -67,7 +67,8 @@
   .fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
 
   /* ---------- カルテ本体（印刷対象） ---------- */
-  .card-page{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:26px 0 8px}
+  .card-page{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:26px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .karte{min-width:480px}
   .karte{border:1.5px solid #C9C9C2;border-radius:8px;padding:10px 11px;margin-bottom:14px;background:#fff}
   .karte:last-child{margin-bottom:0}
   .karte-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--accent);padding-bottom:5px;margin-bottom:7px}
@@ -99,8 +100,8 @@
     /* 紙にはカルテ本体だけを出す（説明文・ボタン・ナビは出さない） */
     main .wrap > *:not(.card-page):not(h1):not(.print-credit){display:none !important}
     h1{font-size:12pt;margin:0 0 6px}
-    .card-page{border:0;border-radius:0;padding:0;margin:0}
-    .karte{border:1.2px solid #999;border-radius:0;padding:7px 8px;margin:0 0 6mm;page-break-inside:avoid}
+    .card-page{border:0;border-radius:0;padding:0;margin:0;overflow:visible}
+    .karte{border:1.2px solid #999;border-radius:0;padding:7px 8px;margin:0 0 6mm;min-width:0;page-break-inside:avoid}
     .karte:last-child{margin-bottom:0}
     table.kv th{background:#EFEFEA !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     table.history thead th{background:#EFEFEA !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
