@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>トリミングカルテ 無料テンプレート（A4・印刷用）— ひとりサロンの顧客カルテ</title>
+<meta name="description" content="ひとりで営むトリミングサロン向けの、無料で印刷できる犬のトリミングカルテ（A4・1枚に2頭分）。飼い主・犬種・体重・混合ワクチンの期限・毛質のクセ・施術履歴・次回の目安を1枚にまとめます。登録不要、メールアドレス不要、そのまま印刷できます。">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/ja/grooming-record-card.html">
+<link rel="alternate" hreflang="ja" href="https://itzhaolei.github.io/groomday-site/ja/grooming-record-card.html">
+<link rel="alternate" hreflang="x-default" href="https://itzhaolei.github.io/groomday-site/ja/grooming-record-card.html">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="トリミングカルテ 無料テンプレート（A4・印刷用）">
+<meta property="og:description" content="飼い主・犬種・ワクチン期限・毛質のクセ・施術履歴・次回の目安を1枚に。A4に2頭分、登録不要で印刷できます。">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/ja/grooming-record-card.html">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="apple-touch-icon" href="../img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:16.5px/1.8 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.94);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:20px;font-size:14.5px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:700px){ nav{display:none} }
+
+  main{padding:48px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.25;letter-spacing:-.02em;margin:0 0 16px}
+  .lede{color:var(--muted);font-size:1.04rem;margin:0 0 24px;max-width:40em}
+  h2{font-size:1.28rem;letter-spacing:-.01em;margin:44px 0 12px;padding-top:6px}
+  h3{font-size:1.02rem;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:24px 0;font-size:15px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0 6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:11px;font-weight:600;font-size:15.5px;border:0;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
+
+  /* ---------- カルテ本体（印刷対象） ---------- */
+  .card-page{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:26px 0 8px}
+  .karte{border:1.5px solid #C9C9C2;border-radius:8px;padding:10px 11px;margin-bottom:14px;background:#fff}
+  .karte:last-child{margin-bottom:0}
+  .karte-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--accent);padding-bottom:5px;margin-bottom:7px}
+  .karte-title{font-weight:700;font-size:14.5px;letter-spacing:.02em;color:var(--accent)}
+  .karte-no{font-size:11px;color:var(--muted)}
+  table.kv{width:100%;border-collapse:collapse;font-size:11.5px;margin-bottom:6px}
+  table.kv th,table.kv td{border:1px solid #D8D8D1;padding:4px 6px;height:23px;vertical-align:middle}
+  table.kv th{background:#F4F6F2;font-weight:600;color:#3C4C46;text-align:left;white-space:nowrap;width:82px}
+  table.kv td{width:auto}
+  table.history{width:100%;border-collapse:collapse;font-size:11px}
+  table.history th,table.history td{border:1px solid #D8D8D1;padding:3px 5px;height:20px}
+  table.history thead th{background:#F4F6F2;font-weight:600;color:#3C4C46;text-align:left;font-size:10.5px}
+  .memo{margin-top:6px;font-size:11px;color:var(--muted)}
+  .memo .rule{border-bottom:1px solid #E2E2DB;height:20px}
+
+  table.checks{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 6px}
+  table.checks th,table.checks td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left;vertical-align:top}
+  table.checks th{font-size:12.5px;color:var(--muted);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+  .print-credit{display:none}
+
+  @media print{
+    @page{size:A4 portrait;margin:10mm}
+    body{background:#fff;font-size:11pt}
+    header,nav,footer,.no-print{display:none !important}
+    main{padding:0}
+    /* 紙にはカルテ本体だけを出す（説明文・ボタン・ナビは出さない） */
+    main .wrap > *:not(.card-page):not(h1):not(.print-credit){display:none !important}
+    h1{font-size:12pt;margin:0 0 6px}
+    .card-page{border:0;border-radius:0;padding:0;margin:0}
+    .karte{border:1.2px solid #999;border-radius:0;padding:7px 8px;margin:0 0 6mm;page-break-inside:avoid}
+    .karte:last-child{margin-bottom:0}
+    table.kv th{background:#EFEFEA !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    table.history thead th{background:#EFEFEA !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .print-credit{display:block !important;font-size:8pt;color:#555;margin:4px 0 0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">アプリ</a>
+      <a href="grooming-record-card.html">無料カルテ</a>
+      <a href="../grooming-day-sheet.html">日別シート</a>
+      <a href="../grooming-price-calculator.html">料金計算</a>
+      <a href="../support.html">サポート</a>
+      <a href="../">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">無料ツール・登録不要</span>
+    <h1>犬のトリミングカルテ（A4に2頭分・印刷用）</h1>
+    <p class="lede">サロンでよく使われているカルテの項目を、ひとり営業で実際に使う順番に並べ直したものです。1枚に2頭分、印刷してファイルに綴じるだけ。飼い主様・犬種・体重・混合ワクチンの期限・毛質のクセ・施術履歴・次回の目安が、1頭につき1枚で完結します。</p>
+
+    <div class="btn-row no-print">
+      <button class="btn" onclick="window.print()">このカルテを印刷する</button>
+      <a class="btn ghost" href="./">アプリ版を見る</a>
+    </div>
+    <p class="fineprint">A4・片面1枚に2頭分。入力内容は保存されず、どこにも送信されません。メールアドレスの入力も不要です。</p>
+
+    <div class="card-page">
+      <section class="karte">
+        <div class="karte-head">
+          <span class="karte-title">トリミングカルテ</span>
+          <span class="karte-no">No. ________　初回来店 ____年__月__日</span>
+        </div>
+        <table class="kv">
+          <tr><th>飼い主様</th><td></td><th>電話</th><td></td></tr>
+          <tr><th>わんちゃん</th><td></td><th>犬種</th><td></td></tr>
+          <tr><th>体重</th><td>______ kg</td><th>年齢</th><td>____ 歳 ____ か月</td></tr>
+          <tr><th>混合ワクチン</th><td colspan="3">最終接種 ____年__月__日　／　次回期限 ____年__月__日　／　狂犬病 ____年__月__日</td></tr>
+          <tr><th>毛質・クセ</th><td colspan="3">（例：下毛が多い／耳まわりが絡む／尻尾はバリカン不可）</td></tr>
+          <tr><th>注意事項</th><td colspan="3">（例：噛み癖あり・ドライヤー苦手・高齢のため短時間で）</td></tr>
+        </table>
+        <table class="history">
+          <thead>
+            <tr><th style="width:70px">日付</th><th>施術内容</th><th style="width:82px">シャンプー</th><th style="width:62px">金額</th><th style="width:82px">次回の目安</th></tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="memo">
+          <div>メモ（写真の仕上がり希望・次回までの宿題 など）</div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+        </div>
+      </section>
+
+      <section class="karte">
+        <div class="karte-head">
+          <span class="karte-title">トリミングカルテ</span>
+          <span class="karte-no">No. ________　初回来店 ____年__月__日</span>
+        </div>
+        <table class="kv">
+          <tr><th>飼い主様</th><td></td><th>電話</th><td></td></tr>
+          <tr><th>わんちゃん</th><td></td><th>犬種</th><td></td></tr>
+          <tr><th>体重</th><td>______ kg</td><th>年齢</th><td>____ 歳 ____ か月</td></tr>
+          <tr><th>混合ワクチン</th><td colspan="3">最終接種 ____年__月__日　／　次回期限 ____年__月__日　／　狂犬病 ____年__月__日</td></tr>
+          <tr><th>毛質・クセ</th><td colspan="3">（例：下毛が多い／耳まわりが絡む／尻尾はバリカン不可）</td></tr>
+          <tr><th>注意事項</th><td colspan="3">（例：噛み癖あり・ドライヤー苦手・高齢のため短時間で）</td></tr>
+        </table>
+        <table class="history">
+          <thead>
+            <tr><th style="width:70px">日付</th><th>施術内容</th><th style="width:82px">シャンプー</th><th style="width:62px">金額</th><th style="width:82px">次回の目安</th></tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="memo">
+          <div>メモ（写真の仕上がり希望・次回までの宿題 など）</div>
+          <div class="rule"></div>
+          <div class="rule"></div>
+        </div>
+      </section>
+    </div>
+
+    <p class="print-credit">GroomDay の無料カルテ — itzhaolei.github.io/groomday-site/ja/grooming-record-card.html</p>
+
+    <h2>この6項目に絞った理由</h2>
+    <p>市販のカルテは項目が多く、書く欄より「探す」時間が長くなりがちです。ひとり営業の1日は、<b>この子は前回どうだったか</b>と<b>次はいつ来るか</b>の2つで決まります。そこだけ残るように項目を削りました。</p>
+    <table class="checks">
+      <thead>
+        <tr><th>項目</th><th>これが無いと起きること</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>犬種・体重</b></td><td>料金を口頭で決めるしかなく、毎回同じ説明をやり直すことになります。</td></tr>
+        <tr><td><b>混合ワクチンの期限</b></td><td>期限切れの子を預かってしまうリスク。予約時に一言確認できれば防げます。</td></tr>
+        <tr><td><b>毛質・クセ</b></td><td>「前回うまくいった方法」が引き継げず、毎回ゼロから試すことになります。</td></tr>
+        <tr><td><b>注意事項</b></td><td>噛み癖・苦手な音は、担当が代わった日にいちばん事故になります。</td></tr>
+        <tr><td><b>施術履歴（金額つき）</b></td><td>値上げの相談も、前回の仕上がり確認も、記憶だけでは根拠になりません。</td></tr>
+        <tr><td><b>次回の目安</b></td><td>「そろそろかな」と思ったときにお客様の連絡先を探す羽目になります。</td></tr>
+      </tbody>
+    </table>
+
+    <h2>運用のしかた（作り直さずに回すコツ）</h2>
+    <ol>
+      <li><b>初回に1枚、以後は履歴に1行。</b>カルテを毎回書き直すのは続きません。新しい子は1枚、常連は履歴の行を足すだけにします。</li>
+      <li><b>鉛筆で書く。</b>カウンターでの変更が秒で済み、濡れた手にも耐えます。紙が電話より速いのはこの一点です。</li>
+      <li><b>「次回の目安」を施術中に決める。</b>会計時に決めようとすると、たいてい忘れます。仕上がりを見た瞬間がいちばん精度の高いタイミングです。</li>
+      <li><b>50音ではなく「来店順」で綴じる。</b>探すときは名前より「先週来た子」の方が早く見つかります。</li>
+    </ol>
+
+    <div class="note">
+      <b>紙が破綻する場所。</b>紙のカルテは「この子は6週間前に来た」「前回いくらだったか」を数えることができません。そこだけを引き受けるためにアプリを作りました。用紙のレイアウトを置き換えるのではなく、その後ろの履歴を持つためです。紙で足りているなら紙のままで構いません。<a href="./">GroomDay</a> は無料でダウンロードでき、同じ1日表示を iPad でも iPhone でも使えます。
+    </div>
+
+    <h2>アプリと比べるときの3つの質問</h2>
+    <ul>
+      <li><b>1日ぶんが1画面で見えるか。</b>顧客リストが最初に開くアプリは、結局紙を横に置くことになります。</li>
+      <li><b>施術の重なりを表現できるか。</b>ひとりサロンは「洗い場の子」と「テーブルの子」が同時にいます。1頭ずつしか扱えない作りのアプリでは、この状態を書けません。</li>
+      <li><b>電波が無くても動くか。</b>トリミング室は建物でいちばん電波の弱い場所になりがちです。</li>
+    </ul>
+    <p>GroomDay はこの3つに「はい」と答え、それ以外はあえて作りません。スタッフのシフト管理、ネット予約ページ、Android 版はありません。スタッフが複数いるなら、サロン向けのプラットフォーム製品の方が向いています。</p>
+
+    <div class="btn-row no-print" style="margin-top:24px">
+      <a class="btn" href="https://apps.apple.com/app/id6827575268">GroomDay を無料でダウンロード</a>
+      <button class="btn ghost" onclick="window.print()">カルテを印刷する</button>
+    </div>
+    <p class="fineprint">iPhone・iPad 対応／無料ダウンロード／Pro は買い切りのアプリ内課金／アカウント不要・サブスクなし。</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    GroomDay — ひとりで営むトリミングサロンのための予約帳。 <a href="./">ホーム</a> · <a href="../grooming-day-sheet.html">無料の日別シート</a> · <a href="../support.html">サポート</a> · <a href="../privacy.html">プライバシー</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "トリミングカルテを紙で運用する方法",
+      "description": "A4に2頭分のカルテを印刷し、初回に1枚作成して以後は施術履歴に1行ずつ追記する運用。",
+      "totalTime": "PT5M",
+      "tool": [{ "@type": "HowToTool", "name": "印刷したカルテ" }, { "@type": "HowToTool", "name": "鉛筆" }],
+      "step": [
+        { "@type": "HowToStep", "name": "印刷する", "text": "A4に2頭分を印刷し、ファイルにはさむ。常に手の届く場所に置く。" },
+        { "@type": "HowToStep", "name": "初回に1枚つくる", "text": "飼い主・犬種・体重・ワクチン期限・毛質のクセ・注意事項を初回に記入する。" },
+        { "@type": "HowToStep", "name": "施術中に次回の目安を決める", "text": "仕上がりを見たタイミングで次回の目安を記入する。会計時では忘れやすい。" },
+        { "@type": "HowToStep", "name": "履歴に1行足す", "text": "2回目以降はカルテを書き直さず、施術履歴の行を追加する。" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "トリミングカルテのテンプレートは無料ですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "はい。ブラウザからそのまま印刷できます。登録・メールアドレス・ダウンロードは不要です。" }
+        },
+        {
+          "@type": "Question",
+          "name": "カルテに最低限必要な項目は何ですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "飼い主と連絡先、犬種と体重、混合ワクチンの最終接種日と次回期限、毛質のクセ、注意事項、施術履歴（金額を含む）、次回の目安です。この7つで1頭分が完結します。" }
+        },
+        {
+          "@type": "Question",
+          "name": "紙のカルテとアプリはどちらが良いですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "1日の進行だけなら紙で十分です。アプリが要るのは、犬ごとの履歴・前回の金額・ワクチン期限を数えて振り返りたいときです。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
