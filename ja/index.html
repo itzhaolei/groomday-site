@@ -89,8 +89,8 @@
   h2{font-size:clamp(1.4rem,3.2vw,1.95rem);letter-spacing:-.01em;line-height:1.32;margin:0 0 12px}
   .sec-head p{color:var(--muted);margin:0}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media (max-width:880px){ .grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:620px){ .grid{grid-template-columns:1fr} }
+  @media (max-width:880px){ .grid,.band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .grid,.band .grid{grid-template-columns:1fr} }
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
   .card h3{font-size:16.5px;margin:14px 0 6px;letter-spacing:0}
   .card p{margin:0;color:var(--muted);font-size:15px}
@@ -98,6 +98,8 @@
 
   .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .band .grid{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:880px){ .band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .band .grid{grid-template-columns:1fr} }
   .band .card{background:var(--paper)}
 
   .split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
