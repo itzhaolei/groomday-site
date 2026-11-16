@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GroomDay — Day book &amp; appointment app for solo dog groomers</title>
-<meta name="description" content="GroomDay is the day book for solo pet groomers. See the whole day at a glance, tap to book, split overlapping grooms, and keep every dog's record — on iPad and iPhone. Free download, no account, no subscription, works offline.">
+<meta name="description" content="GroomDay is the day book for solo pet groomers. See the whole day at a glance, tap to book, split overlapping grooms, keep every dog's record — and keep the before / after photo with the booking. On iPad and iPhone. Free download, no account, no subscription, works offline.">
 <link rel="canonical" href="https://itzhaolei.github.io/groomday-site/">
 <link rel="alternate" hreflang="en" href="https://itzhaolei.github.io/groomday-site/">
 <link rel="alternate" hreflang="it" href="https://itzhaolei.github.io/groomday-site/it/">
@@ -91,8 +91,8 @@
   h2{font-size:clamp(1.5rem,3.4vw,2.05rem);letter-spacing:-.025em;line-height:1.18;margin:0 0 12px}
   .sec-head p{color:var(--muted);margin:0}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media (max-width:880px){ .grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:620px){ .grid{grid-template-columns:1fr} }
+  @media (max-width:880px){ .grid,.band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .grid,.band .grid{grid-template-columns:1fr} }
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
   .card h3{font-size:16.5px;margin:14px 0 6px;letter-spacing:-.01em}
   .card p{margin:0;color:var(--muted);font-size:15px}
@@ -101,6 +101,8 @@
   /* quiet band */
   .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .band .grid{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:880px){ .band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .band .grid{grid-template-columns:1fr} }
   .band .card{background:var(--paper)}
 
   /* split */
@@ -250,13 +252,24 @@
   <section class="band" id="new">
     <div class="wrap">
       <div class="sec-head">
-        <h2>New: the things other apps charge a subscription for</h2>
-        <p>Three everyday grooming problems, solved without a monthly fee.</p>
+        <h2>New in 1.2: the before / after photo, kept inside the booking</h2>
+        <p>Two photo slots per groom — so the answer to “how much came off?” is a picture, not an argument.</p>
       </div>
       <div class="grid">
-        <div class="card"><h3>Multi-pet households</h3><p>Dogs from the same owner sit together under one client. Add the second dog without typing the phone number again.</p></div>
-        <div class="card"><h3>Vaccine dates that warn you</h3><p>Rabies, bordetella, DHPP or a type of your own, each with a due date. Inside 30 days it is flagged, overdue it turns red.</p></div>
-        <div class="card"><h3>One-tap text reminders</h3><p>Opens your own Messages app with the reminder already written — sent from your number, so there are no SMS credits to buy.</p></div>
+        <div class="card"><h3>Before shot, after shot</h3><p>One slot for the coat as the dog came in, one for the finished clip. Both are chosen from your camera roll and stay attached to that booking — not buried in an album you have to scroll back through.</p></div>
+        <div class="card"><h3>Side by side, then zoom in</h3><p>Tap either photo and both open full screen, stacked for comparison. Pinch or double-tap to go right in on the paws, the face, the finish — close enough to hand the screen to the owner at pickup.</p></div>
+        <div class="card"><h3>Sort the book, find any number</h3><p>Order the client list by last visit, name or newest first. Phone search ignores full-width digits and the way you spaced the dashes, so the number you typed still finds the dog.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="phone" style="width:min(280px,100%);margin:0 auto;order:2"><img src="img/v120-photos.png" width="552" height="1200" alt="Edit booking screen with two photo slots labelled BEFORE and AFTER, showing the same spaniel before and after its clip" loading="lazy"></div>
+      <div>
+        <h2>The photo is the receipt</h2>
+        <p>Owners ask the same question at every pickup: <b>how much did you take off?</b> Two photos taken minutes apart, in the same light and from the same table, answer it without a word — and they settle the call that starts “last time it was shorter”.</p>
+        <p>Nothing leaves the device. The photos live with the booking in the same file as the rest of the book: delete the appointment and they are deleted with it, and there is no upload step and no photo library to clean out afterwards.</p>
       </div>
     </div>
   </section>
@@ -270,6 +283,7 @@
           <li><b>Vaccine records with due dates</b>, so a booster never gets forgotten between grooms.</li>
           <li><b>Service price list with durations</b>, so booking is two taps instead of typing a price from memory.</li>
           <li><b>Due-back dates</b> based on coat cycle, so regulars don't quietly drift away.</li>
+          <li><b>One-tap text reminders</b> — opens your own Messages app with the wording already in it, sent from your number, so there are no SMS credits to buy.</li>
           <li><b>CSV export</b> whenever your accountant asks for the numbers.</li>
         </ul>
       </div>
@@ -399,9 +413,9 @@
   "applicationSubCategory":"Appointment scheduling",
   "url":"https://itzhaolei.github.io/groomday-site/",
   "downloadUrl":"https://apps.apple.com/app/id6827575268",
-  "description":"Day book and appointment app for solo pet groomers: whole-day view, tap-to-book, overlapping grooms split into columns, per-dog client records, offline and account-free.",
+  "description":"Day book and appointment app for solo pet groomers: whole-day view, tap-to-book, overlapping grooms split into columns, per-dog client records, before/after photos with pinch zoom, offline and account-free.",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-  "featureList":["Whole-day appointment view","Tap to book with 15-minute snapping","Overlapping bookings split into columns","Done and no-show tracking","Breed-aware groom durations","Handling notes on bookings","Client records with lifetime spend","Offline, account-free, on-device data"]
+  "featureList":["Whole-day appointment view","Tap to book with 15-minute snapping","Overlapping bookings split into columns","Done and no-show tracking","Breed-aware groom durations","Handling notes on bookings","Before and after photos on every booking","Full-screen photo comparison with pinch zoom","Client records with lifetime spend","Client list sorted by last visit, name or newest","Phone search that ignores full-width digits","Offline, account-free, on-device data"]
 }
 </script>
 <script type="application/ld+json">
