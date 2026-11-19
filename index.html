@@ -55,8 +55,8 @@
   .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
   .brand svg{flex:none}
-  nav{display:flex;gap:26px;font-size:15px}
-  nav a{color:var(--muted);text-decoration:none}
+  nav{display:flex;flex-wrap:wrap;justify-content:flex-end;column-gap:16px;row-gap:2px;font-size:14.5px}
+  nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
   nav a:hover{color:var(--ink)}
   @media (max-width:720px){ nav{display:none} }
 
