@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GroomDay — agenda para tosadores que trabalham sozinhos</title>
+<meta name="description" content="O GroomDay é a agenda do dia para quem faz banho e tosa sozinho: o dia inteiro numa tela, agendamento em um toque, cães sobrepostos em colunas separadas e uma ficha por pet. iPhone e iPad, grátis, sem conta, sem internet.">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/pt/">
+<link rel="alternate" hreflang="en" href="https://itzhaolei.github.io/groomday-site/">
+<link rel="alternate" hreflang="it" href="https://itzhaolei.github.io/groomday-site/it/">
+<link rel="alternate" hreflang="ja" href="https://itzhaolei.github.io/groomday-site/ja/">
+<link rel="alternate" hreflang="es" href="https://itzhaolei.github.io/groomday-site/es/">
+<link rel="alternate" hreflang="de" href="https://itzhaolei.github.io/groomday-site/de/">
+<link rel="alternate" hreflang="pt-BR" href="https://itzhaolei.github.io/groomday-site/pt/">
+<link rel="alternate" hreflang="x-default" href="https://itzhaolei.github.io/groomday-site/">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="GroomDay — a agenda do dia do banho e tosa">
+<meta property="og:description" content="A agenda de papel que você guarda na cabeça, agora no iPad da bancada. O dia inteiro numa tela, agendamento em um toque, cães sobrepostos em colunas separadas. Grátis, sem conta, sem internet.">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/pt/">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GroomDay — a agenda do dia do banho e tosa">
+<meta name="twitter:description" content="Agenda para o pet shop de uma bancada só. Grátis, sem conta, funciona sem internet.">
+<meta name="twitter:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+
+<link rel="apple-touch-icon" href="../img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;width:100%;min-width:0}
+  a{color:var(--accent)}
+
+  /* header */
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.9);position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.2) blur(8px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;min-height:64px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand svg{flex:none}
+  nav{display:flex;flex-wrap:wrap;justify-content:flex-end;column-gap:16px;row-gap:2px;font-size:14.5px;max-width:100%}
+  nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:720px){ nav{display:none} }
+
+  /* hero */
+  .hero{padding:76px 24px 20px;text-align:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(2.1rem,5.2vw,3.5rem);line-height:1.08;letter-spacing:-.03em;margin:0 auto 20px;max-width:16em}
+  .lede{font-size:clamp(1.02rem,2.2vw,1.19rem);color:var(--muted);max-width:38em;margin:0 auto 32px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .store-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;padding:13px 22px;border-radius:12px;font-weight:600;font-size:16px;transition:transform .15s ease,opacity .15s}
+  .store-btn:hover{transform:translateY(-1px);opacity:.92}
+  .store-btn small{display:block;font-size:11px;font-weight:400;opacity:.75;line-height:1.1}
+  .store-btn b{display:block;font-size:16px;line-height:1.25}
+  .ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;padding:13px 20px;border-radius:12px;font-weight:600;font-size:15px}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:18px}
+  @media (max-width:560px){
+    .cta-row{flex-direction:column;align-items:stretch}
+    .cta-row a{justify-content:center}
+  }
+
+  /* screenshots */
+  .shots{display:flex;gap:26px;justify-content:center;align-items:flex-start;padding:44px 24px 8px;overflow:hidden;max-width:100%}
+  .phone{width:min(280px,30vw);background:#fff;border:1px solid var(--line);border-radius:26px;padding:8px;box-shadow:0 14px 40px rgba(22,22,26,.08)}
+  .phone img{width:100%;height:auto;display:block;border-radius:19px}
+  .phone.mid{width:min(300px,32vw)}
+  @media (max-width:860px){
+    .shots{overflow-x:auto;justify-content:flex-start;scroll-snap-type:x mandatory;padding-bottom:14px}
+    .phone,.phone.mid{width:62vw;flex:none;scroll-snap-align:center}
+  }
+
+  /* sections */
+  section{padding:84px 0}
+  .sec-head{max-width:34em;margin-bottom:40px}
+  h2{font-size:clamp(1.5rem,3.4vw,2.05rem);letter-spacing:-.025em;line-height:1.18;margin:0 0 12px}
+  .sec-head p{color:var(--muted);margin:0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:880px){ .grid,.band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .grid,.band .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{font-size:16.5px;margin:14px 0 6px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .ico{width:34px;height:34px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+
+  /* quiet band */
+  .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .band .grid{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:880px){ .band .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .band .grid{grid-template-columns:1fr} }
+  .band .card{background:var(--paper)}
+
+  /* split */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  @media (max-width:880px){ .split{grid-template-columns:1fr;gap:32px} }
+  .split ul{margin:0;padding-left:0;list-style:none}
+  .split li{position:relative;padding-left:26px;margin-bottom:12px;color:var(--muted)}
+  .split li::before{content:"";position:absolute;left:0;top:.62em;width:11px;height:11px;border-radius:50%;background:var(--accent-soft);border:2px solid var(--accent)}
+  .split li b{color:var(--ink);font-weight:600}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px}
+  @media (max-width:720px){ .price-grid{grid-template-columns:1fr} }
+  .plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .plan.pro{border-color:var(--accent);box-shadow:0 8px 30px rgba(31,107,87,.08)}
+  .plan .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .plan h3{font-size:19px;margin:6px 0 4px}
+  .plan .price{font-size:15px;color:var(--muted);margin:0 0 16px}
+  .plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+  .plan li{margin-bottom:8px}
+  .note{font-size:13.5px;color:var(--muted);margin-top:16px;max-width:46em}
+
+  /* faq */
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+  details[open]{border-color:#D7D7CF}
+  summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--muted);font-weight:400}
+  details[open] summary::after{content:"–"}
+  details p{margin:10px 0 0;color:var(--muted);font-size:15px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0 48px;font-size:14px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+  .foot nav{gap:20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Página inicial do GroomDay">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="2.5" y="3.5" width="19" height="17" rx="4" stroke="#1F6B57" stroke-width="1.7"/>
+        <path d="M2.5 8.5h19" stroke="#1F6B57" stroke-width="1.7"/>
+        <path d="M7.5 2v3M16.5 2v3" stroke="#1F6B57" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="12" cy="15" r="2.2" fill="#1F6B57"/>
+      </svg>
+      GroomDay
+    </a>
+    <nav>
+      <a href="#features">Recursos</a>
+      <a href="#new">Novidades</a>
+      <a href="#quiet">Privacidade</a>
+      <a href="#pricing">Preço</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="../grooming-day-sheet.html">Ficha do dia (EN)</a>
+      <a href="../support.html">Ajuda</a>
+      <a href="../">English</a>
+      <a href="../it/">Italiano</a>
+      <a href="../ja/">日本語</a>
+      <a href="../es/">Español</a>
+      <a href="../de/">Deutsch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <span class="eyebrow">Para iPad e iPhone</span>
+    <h1>A agenda do dia de quem trabalha sozinho na tesoura</h1>
+    <p class="lede">A agenda de papel que você guarda na cabeça, agora no iPad da bancada. Você abre e o dia já está lá: cada cão, cada horário, cada serviço, cada preço — numa coluna só, que dá para ler a um metro de distância.</p>
+    <div class="cta-row">
+      <a class="store-btn" href="https://apps.apple.com/app/id6827575268">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="#fff" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.6zM14.2 5.6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.7-1.3z"/></svg>
+        <span><small>Baixe na</small><b>App Store</b></span>
+      </a>
+      <a class="ghost" href="#features">Ver o dia por dentro</a>
+    </div>
+    <p class="fineprint">Download grátis · Sem conta · Sem assinatura · Funciona sem internet</p>
+  </div>
+
+  <div class="wrap shots">
+    <div class="phone"><img src="../img/1-day-iphone.png" width="1320" height="2868" alt="Visão do dia no GroomDay com cinco agendamentos das 9h às 16h e os valores de cada um" loading="eager"></div>
+    <div class="phone mid"><img src="../img/2-new-iphone.png" width="1320" height="2868" alt="Novo agendamento com cliente, serviço, horário, duração e preço" loading="lazy"></div>
+    <div class="phone"><img src="../img/3-overlap-iphone.png" width="1320" height="2868" alt="Dois agendamentos sobrepostos lado a lado em colunas separadas" loading="lazy"></div>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Por que o tosador deixa essa agenda aberta o dia inteiro</h2>
+        <p>Nenhuma lista para rolar. Uma coluna que fica à vista com a tesoura na mão.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v3M16 4v3"/></svg></div>
+          <h3>O dia inteiro numa tela</h3>
+          <p>Cada cão, cada horário, cada serviço e cada valor na mesma superfície. Sem trocar de página, sem rolar para ver quem vem depois.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></div>
+          <h3>Toca no buraco livre e o agendamento está feito</h3>
+          <p>Blocos de 15 minutos. Você escolhe o cão, escolhe o serviço e pronto, sem sair do dia que está olhando.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="7" height="16" rx="2"/><rect x="14" y="7" width="7" height="13" rx="2"/></svg></div>
+          <h3>Sobreposição vira coluna</h3>
+          <p>Dois cães ao mesmo tempo — um banho e uma tosa completa — ficam um ao lado do outro em vez de se cobrirem.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Concluído ou faltou, um toque</h3>
+          <p>O caixa do dia fecha certo sem precisar repassar tudo à noite.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg></div>
+          <h3>Duração por raça</h3>
+          <p>Você escolhe a raça e o app sugere quanto aquela tosa leva de verdade. Um poodle grande não é um pinscher.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v11H9l-4 4V5z" stroke-linejoin="round"/></svg></div>
+          <h3>Observações de temperamento no agendamento</h3>
+          <p>«Morde», «nós», «idoso» aparecem onde está o corte, não três telas adentro de uma ficha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="quiet">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Feita para não incomodar</h2>
+        <p>Sem parede de cadastro, sem tutorial obrigatório e sem notificação tentando te trazer de volta.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Sem conta</h3><p>Você abre o app e trabalha. Não há nada para cadastrar, confirmar nem guardar como senha.</p></div>
+        <div class="card"><h3>Fica no seu aparelho</h3><p>Seu cadastro de clientes não sai do iPad. Sem sincronização na nuvem, sem analytics, sem SDK de rastreamento.</p></div>
+        <div class="card"><h3>Funciona sem wi-fi</h3><p>Porque o wi-fi do pet shop é o que é, e o dia não para quando o roteador cai.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="marketplace">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Não é um marketplace</h2>
+        <p>Os apps de agendamento para pet shop exigem que o cliente instale algo e libere o cadastro antes de conseguir marcar. O GroomDay funciona ao contrário: só você usa.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>O cliente não instala nada</h3><p>Nenhum app para o tutor baixar, nenhuma aprovação antes de fechar um horário.</p></div>
+        <div class="card"><h3>Nada de criar rede</h3><p>Funciona desde o primeiro cão que você cadastra. Não depende de quantos colegas ou clientes da região já usam.</p></div>
+        <div class="card"><h3>Nada para configurar</h3><p>Você abre e o dia de hoje já está lá: horários, durações, preços. Só entra nos ajustes se quiser.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Novidades: o que outros apps cobram assinatura para fazer</h2>
+        <p>Três problemas do dia a dia, resolvidos sem mensalidade.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Vários cães, um tutor</h3><p>Os cães do mesmo cliente ficam juntos numa ficha. Você cadastra o segundo sem digitar o telefone de novo.</p></div>
+        <div class="card"><h3>Vacinas que avisam sozinhas</h3><p>Antirrábica, gripe canina, V8/V10 ou o tipo que você criar, cada uma com sua data. Faltando 30 dias o app avisa; vencida fica em vermelho.</p></div>
+        <div class="card"><h3>Lembrete por SMS em um toque</h3><p>Abre seu app de mensagens com o texto já escrito: sai do seu número, então não precisa comprar crédito.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>Cada cão tem a sua ficha</h2>
+        <ul>
+          <li><b>Raça, tutor, telefone, visitas, total faturado</b> — o livro inteiro num lugar, com os outros cães da família a um toque.</li>
+          <li><b>Vacinas com data de validade</b>, para o reforço não se perder entre dois agendamentos.</li>
+          <li><b>Lista de serviços com duração</b>: agendar são dois toques, sem preço de cabeça.</li>
+          <li><b>Data do próximo agendamento</b>, calculada pelo ciclo do pelo, para o cliente fixo não sumir em silêncio.</li>
+          <li><b>Exportação CSV</b> para quando o contador quiser ver os números.</li>
+        </ul>
+      </div>
+      <div class="phone" style="width:min(280px,100%);margin:0 auto"><img src="../img/v110-clients.png" width="1320" height="2868" alt="Cadastro de clientes do GroomDay com dois cães do mesmo tutor e o aviso de vacinas a revisar" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="phone" style="width:min(280px,100%);margin:0 auto;order:2"><img src="../img/v110-vaccines.png" width="1320" height="2868" alt="Ficha do cão com a vacina antirrábica vencida há 12 dias, gripe canina com 18 dias pela frente e as tosas anteriores" loading="lazy"></div>
+      <div>
+        <h2>Um prazo que não dá para perder</h2>
+        <p>Cada cão leva a sua lista de vacinas: antirrábica, gripe canina, V8/V10 ou o tipo que você criar. Cada linha diz o prazo com palavra clara: <b>faltam 18 dias</b>, ou <b>vencida há 12 dias</b> em vermelho. A lista de clientes mostra um aviso assim que algo vence em 30 dias: você fala com o tutor naquela mesma tela, em vez de descobrir já com o cão na bancada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Grátis para trabalhar. Você paga uma vez quando ficar pequeno.</h2>
+        <p>Sem assinatura, sem renovação, sem reajuste anual.</p>
+      </div>
+      <div class="price-grid">
+        <div class="plan">
+          <span class="tag">Grátis</span>
+          <h3>Baixe e trabalhe</h3>
+          <p class="price">R$ 0 — sem conta</p>
+          <ul>
+            <li>Agenda do dia inteiro</li>
+            <li>Até 8 clientes</li>
+            <li>Lista de serviços com duração</li>
+            <li>Marcar concluído / faltou</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <span class="tag">Pro · pagamento único</span>
+          <h3>Para o livro completo</h3>
+          <p class="price">Pagamento único, para sempre</p>
+          <ul>
+            <li>Clientes sem limite</li>
+            <li>Exportação CSV de tudo</li>
+            <li>Resumo semanal de faturamento</li>
+            <li>Sem assinatura, nunca</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">O Pro é comprado dentro do app e uma vez só: sem assinatura nem renovação. O preço aparece na App Store na moeda do seu país. Você baixa de graça, trabalha com a agenda e passa para o Pro só quando os 8 clientes ficarem apertados.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><h2>As perguntas que os tosadores fazem</h2></div>
+
+      <details open>
+        <summary>O GroomDay é grátis?</summary>
+        <p>O download é grátis e a agenda funciona sem pagar. A versão gratuita vai até 8 clientes, o suficiente para uma semana real. O Pro é um pagamento único que tira o limite e adiciona a exportação CSV e o resumo semanal de faturamento.</p>
+      </details>
+      <details>
+        <summary>Preciso criar conta?</summary>
+        <p>Não. Não tem cadastro, nem login, nem e-mail obrigatório. Você abre o app e o dia de hoje já está lá.</p>
+      </details>
+      <details>
+        <summary>Onde ficam os dados dos meus clientes?</summary>
+        <p>Só no seu aparelho. O GroomDay não tem servidor na nuvem nem analytics, então nada é enviado. Para uma cópia de segurança você usa a exportação CSV.</p>
+      </details>
+      <details>
+        <summary>Funciona sem internet?</summary>
+        <p>Sim. O app é usado inteiro offline: nunca precisa chamar a nuvem para mostrar o seu dia.</p>
+      </details>
+      <details>
+        <summary>Roda no iPhone e no iPad?</summary>
+        <p>Sim, o mesmo app nos dois. Foi pensado para ser lido na bancada a um braço de distância e funciona em pé e deitado.</p>
+      </details>
+      <details>
+        <summary>Tem versão para Android?</summary>
+        <p>Por enquanto não. O GroomDay é feito só para iOS e iPadOS.</p>
+      </details>
+      <details>
+        <summary>Meus clientes precisam instalar um app ou se cadastrar?</summary>
+        <p>Não. O GroomDay não é um marketplace: o tutor não baixa nada, não recebe pedido de permissão e não precisa lembrar senha. Você agenda por ele, como na agenda de papel.</p>
+      </details>
+      <details>
+        <summary>Tenho um pet shop com várias bancadas e funcionários. Serve para mim?</summary>
+        <p>Provavelmente não. O GroomDay é feito de propósito para pet shops de uma ou duas bancadas: sem escala de turnos, sem ferramenta de marketing e sem relatório de várias lojas. É justamente essa decisão que mantém a visão do dia legível.</p>
+      </details>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap" style="text-align:center">
+      <h2 style="max-width:22em;margin:0 auto 14px">Põe a agenda na bancada</h2>
+      <p style="color:var(--muted);margin:0 auto 26px;max-width:34em">Baixe de graça. Nada para ativar.</p>
+      <div class="cta-row">
+        <a class="store-btn" href="https://apps.apple.com/app/id6827575268">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="#fff" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.6zM14.2 5.6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.7-1.3z"/></svg>
+          <span><small>Baixe na</small><b>App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 GroomDay · Para o pet shop de uma bancada só.</div>
+    <nav>
+      <a href="../privacy.html">Privacidade</a>
+      <a href="../grooming-day-sheet.html">Ficha do dia (EN)</a>
+      <a href="../grooming-price-calculator.html">Calculadora de preços (EN)</a>
+      <a href="../support.html">Ajuda</a>
+      <a href="../">English</a>
+      <a href="../it/">Italiano</a>
+      <a href="../ja/">日本語</a>
+      <a href="../es/">Español</a>
+      <a href="../de/">Deutsch</a>
+      <a href="https://apps.apple.com/app/id6827575268">App Store</a>
+    </nav>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"GroomDay",
+  "inLanguage":"pt-BR",
+  "operatingSystem":"iOS, iPadOS",
+  "applicationCategory":"BusinessApplication",
+  "applicationSubCategory":"Appointment scheduling",
+  "url":"https://itzhaolei.github.io/groomday-site/pt/",
+  "downloadUrl":"https://apps.apple.com/app/id6827575268",
+  "description":"Agenda e agendamento para tosadores que trabalham sozinhos: o dia inteiro numa tela, agendamento em um toque, tosas sobrepostas em colunas separadas, uma ficha por cão, sem internet e sem conta.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},
+  "featureList":["O dia inteiro numa tela","Agendamento em blocos de 15 minutos","Sobreposição em colunas","Concluído e faltou com um toque","Duração por raça","Observações no agendamento","Cadastro de clientes com total faturado","Sem internet, sem conta, dados no aparelho"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "inLanguage":"pt-BR",
+  "mainEntity":[
+    {"@type":"Question","name":"O GroomDay é grátis?","acceptedAnswer":{"@type":"Answer","text":"O download é grátis e a agenda funciona sem pagar. A versão gratuita vai até 8 clientes. O Pro é um pagamento único que tira o limite e adiciona a exportação CSV e o resumo semanal de faturamento."}},
+    {"@type":"Question","name":"Preciso criar conta?","acceptedAnswer":{"@type":"Answer","text":"Não. Não tem cadastro, nem login, nem e-mail obrigatório."}},
+    {"@type":"Question","name":"Onde ficam os dados dos meus clientes?","acceptedAnswer":{"@type":"Answer","text":"Só no seu aparelho. O GroomDay não tem servidor na nuvem nem analytics, então nada é enviado."}},
+    {"@type":"Question","name":"Funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Sim, o app é usado inteiro offline."}},
+    {"@type":"Question","name":"Roda no iPhone e no iPad?","acceptedAnswer":{"@type":"Answer","text":"Sim, o mesmo app nos dois, em pé e deitado."}},
+    {"@type":"Question","name":"Meus clientes precisam instalar um app ou se cadastrar?","acceptedAnswer":{"@type":"Answer","text":"Não. O GroomDay não é um marketplace: o tutor não baixa nada, não libera cadastro e não precisa lembrar senha. Você agenda por ele."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"GroomDay","item":"https://itzhaolei.github.io/groomday-site/"},
+    {"@type":"ListItem","position":2,"name":"Português (Brasil)","item":"https://itzhaolei.github.io/groomday-site/pt/"}
+  ]
+}
+</script>
+
+</body>
+</html>
