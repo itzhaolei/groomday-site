@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GroomDay — 혼자 하는 애견미용사를 위한 예약 장부 (iPhone·iPad)</title>
+<meta name="description" content="GroomDay는 혼자 애견미용실을 운영하는 분을 위한 예약 장부 앱입니다. 하루 일정이 한눈에 보이고, 탭해서 예약하고, 겹치는 미용은 열을 나눠 표시합니다. 고객 카드에는 백신 만료일과 전·후 사진이 함께 남습니다.">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/ko/">
+<link rel="alternate" hreflang="en" href="https://itzhaolei.github.io/groomday-site/">
+<link rel="alternate" hreflang="ko" href="https://itzhaolei.github.io/groomday-site/ko/">
+<link rel="alternate" hreflang="ja" href="https://itzhaolei.github.io/groomday-site/ja/">
+<link rel="alternate" hreflang="es" href="https://itzhaolei.github.io/groomday-site/es/">
+<link rel="alternate" hreflang="it" href="https://itzhaolei.github.io/groomday-site/it/">
+<link rel="alternate" hreflang="de" href="https://itzhaolei.github.io/groomday-site/de/">
+<link rel="alternate" hreflang="pt-BR" href="https://itzhaolei.github.io/groomday-site/pt/">
+<link rel="alternate" hreflang="x-default" href="https://itzhaolei.github.io/groomday-site/">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="GroomDay — 혼자 하는 애견미용사를 위한 예약 장부">
+<meta property="og:description" content="하루 일정이 한눈에, 탭해서 예약, 겹치는 미용은 열을 나눠 표시. 고객 카드에 백신 만료일과 전·후 사진이 함께 남습니다.">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/ko/">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GroomDay — 혼자 하는 애견미용사를 위한 예약 장부">
+<meta name="twitter:description" content="하루 일정이 한눈에, 탭해서 예약, 겹치는 미용은 열을 나눠 표시. 고객 카드에 백신 만료일과 전·후 사진이 함께 남습니다.">
+<meta name="twitter:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+
+<link rel="apple-touch-icon" href="../img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.92);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:640px){ nav{display:none} }
+
+  main{padding:48px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(1.8rem,4.2vw,2.6rem);line-height:1.14;letter-spacing:-.025em;margin:0 0 14px}
+  .lede{color:var(--muted);font-size:1.05rem;margin:0 0 26px;max-width:42em}
+  h2{font-size:1.3rem;letter-spacing:-.015em;margin:44px 0 12px}
+  h3{font-size:1.02rem;margin:22px 0 6px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:7px}
+
+  .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 8px}
+  @media (max-width:640px){ .summary{grid-template-columns:1fr} }
+  .summary div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .summary b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;font-weight:600}
+  .summary span{font-size:.97rem}
+
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:0 0 14px}
+  .day .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;margin-right:9px;vertical-align:1px}
+  .day h3{display:inline;margin:0;font-size:1.06rem;letter-spacing:-.01em}
+  .day .time{display:block;color:var(--muted);font-size:13.5px;margin:8px 0 10px}
+  .day p:last-child{margin-bottom:0}
+  .why{color:var(--muted);font-size:.95rem;border-left:2px solid var(--accent-soft);padding-left:12px;margin:12px 0 0}
+
+  .note{background:var(--accent-soft);border-radius:12px;padding:16px 18px;margin:26px 0;font-size:.97rem}
+  .note p:last-child{margin-bottom:0}
+
+  .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:26px 0 0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+    padding:12px 20px;border-radius:12px;font-size:15.5px}
+  .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+
+  table{width:100%;border-collapse:collapse;font-size:.95rem;margin:6px 0 18px;background:var(--card)}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:none}
+
+  details{border-bottom:1px solid var(--line);padding:14px 0}
+  summary{cursor:pointer;font-weight:600;font-size:1rem}
+  details p{margin:10px 0 0;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}
+  footer a{color:var(--muted)}
+
+  @media print{
+    header,footer,.cta,.summary,nav{display:none}
+    body{background:#fff}
+    .day{break-inside:avoid;border:1px solid #ccc;box-shadow:none}
+    main{padding:0}
+  }
+</style></head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="../"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">앱 소개</a>
+      <a href="../support.html">지원</a>
+      <a href="../privacy.html">개인정보</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="eyebrow">혼자 하는 애견미용사</span>
+  <h1>하루 일정이 한눈에 보이는 예약 장부</h1>
+  <p class="lede">종이 장부, 휴대폰 캘린더, 메모장 — 예약이 세 곳에 흩어져 있으면 놓치는 건 결국 손님입니다. GroomDay는 애견미용사 한 사람이 하루를 굴리는 데 필요한 것만 담았습니다. 가입 없음, 클라우드 업로드 없음, 구독 없음.</p>
+
+  <div class="summary">
+    <div><b>가입</b><span>없음 — 설치하면 바로</span></div>
+    <div><b>결제</b><span>한 번만, 구독 없음</span></div>
+    <div><b>사진</b><span>기기 안에만 저장</span></div>
+  </div>
+
+  <p><a href="https://apps.apple.com/kr/app/id6827575268"><b>App Store에서 보기 →</b></a></p>
+
+  <h2>무엇이 들어 있나</h2>
+
+  <h3>하루 일정</h3>
+  <p>그날 예약이 시간 순서대로 한 화면에 놓입니다. 빈 자리를 탭하면 바로 예약이 잡히고, 미용 시간이 겹치는 두 마리는 열을 나눠 나란히 표시됩니다. 그래서 “지금 드라이 중인 아이”와 “다음에 들어올 아이”가 동시에 보입니다.</p>
+
+  <h3>고객 카드</h3>
+  <p>견종, 생일, 마지막 방문, 지금까지의 누적 금액이 한 카드에 모입니다. 한 집에서 여러 마리를 데려오는 경우에도 고객은 하나, 아이들은 여럿으로 묶입니다.</p>
+
+  <h3>백신 기록</h3>
+  <p>아이마다 접종일과 만료일을 적어 두면, 만료가 다가오는 아이가 목록에서 먼저 눈에 띕니다. “광견병 접종 아직인가요?” 문자를 매번 보내지 않아도 됩니다.</p>
+
+  <h3>전·후 사진</h3>
+  <p>예약마다 미용 전 사진과 후 사진을 한 장씩. 전체 화면에서 나란히 비교하고, 두 손가락으로 확대합니다. 사진은 업로드되지 않고 기기 안에만 남습니다.</p>
+
+  <h3>가격표와 매출</h3>
+  <p>서비스별 가격을 정해 두면 예약마다 다시 부르지 않아도 됩니다. 하루 합계와 주 단위 매출이 같이 계산됩니다.</p>
+
+  <h3>백업과 기기 이동</h3>
+  <p>장부 전체를 파일 하나로 내보내고, 그 파일로 그대로 되돌립니다 — 사진까지 함께. 복원하기 전에 지금 장부를 먼저 사본으로 남겨 두기 때문에, 잘못 눌러도 되돌릴 수 있습니다.</p>
+
+  <h2>가격</h2>
+  <p>앱은 무료로 시작합니다. Pro는 <b>한 번만 결제</b>하고 계속 쓰는 방식이며 구독이 아닙니다. 미국 스토어 기준 US$2.99이고, 나라별 가격은 App Store에 표시되는 금액을 따릅니다.</p>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>고객도 앱을 설치해야 하나요?</h3>
+  <p>아니요. 고객은 아무것도 설치하지 않습니다. 예약 확인 문구는 미용사가 문자로 보내는 방식이고, 고객 계정도 로그인도 없습니다.</p>
+
+  <h3>데이터는 어디에 저장되나요?</h3>
+  <p>기기 안에 저장되고 클라우드로 올라가지 않습니다. 기기를 바꿀 때는 내보낸 백업 파일로 직접 옮깁니다.</p>
+
+  <h3>구독인가요?</h3>
+  <p>아니요. 한 번 결제하면 그대로 쓰는 방식입니다.</p>
+
+  <h3>한국어를 지원하나요?</h3>
+  <p>네. 앱 화면과 App Store 페이지 모두 한국어로 제공됩니다.</p>
+
+  <p style="margin-top:32px"><a href="https://apps.apple.com/kr/app/id6827575268"><b>App Store에서 GroomDay 보기 →</b></a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    GroomDay — 혼자 하는 애견미용사를 위한 예약 장부 ·
+    <a href="../">English</a> ·
+    <a href="../ja/">日本語</a> ·
+    <a href="../de/">Deutsch</a> ·
+    <a href="../es/">Español</a> ·
+    <a href="../it/">Italiano</a> ·
+    <a href="../pt/">Português</a> ·
+    <a href="../support.html">지원</a> ·
+    <a href="../privacy.html">개인정보</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GroomDay",
+      "operatingSystem": "iOS, iPadOS",
+      "applicationCategory": "BusinessApplication",
+      "inLanguage": "ko",
+      "url": "https://apps.apple.com/kr/app/id6827575268",
+      "description": "혼자 하는 애견미용사를 위한 예약 장부. 하루 일정, 고객 카드, 백신 만료일, 전·후 사진, 매출 집계, 백업.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "고객도 앱을 설치해야 하나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "아니요. 고객은 아무것도 설치하지 않습니다. 고객 계정도 로그인도 없습니다." }
+        },
+        {
+          "@type": "Question",
+          "name": "데이터는 어디에 저장되나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "기기 안에 저장되고 클라우드로 올라가지 않습니다. 기기를 바꿀 때는 내보낸 백업 파일로 직접 옮깁니다." }
+        },
+        {
+          "@type": "Question",
+          "name": "구독인가요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "아니요. 한 번 결제하면 그대로 쓰는 방식입니다." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "GroomDay", "item": "https://itzhaolei.github.io/groomday-site/" },
+        { "@type": "ListItem", "position": 2, "name": "한국어", "item": "https://itzhaolei.github.io/groomday-site/ko/" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
