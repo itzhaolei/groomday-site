@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機種変更でトリミングの予約帳と写真を引き継ぐ手順 — GroomDay</title>
+<meta name="description" content="新しいiPhoneに替えるとき、ひとりサロンの予約帳・顧客カルテ・料金表・施術前後の写真をどう引き継ぐか。アプリのバックアップファイルを使う手順と、バージョンごとに何が入るのかを正直にまとめました。">
+<link rel="canonical" href="https://itzhaolei.github.io/groomday-site/ja/grooming-data-transfer.html">
+<link rel="alternate" hreflang="ja" href="https://itzhaolei.github.io/groomday-site/ja/grooming-data-transfer.html">
+<link rel="alternate" hreflang="x-default" href="https://itzhaolei.github.io/groomday-site/ja/grooming-data-transfer.html">
+<meta name="theme-color" content="#FBFBF8">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GroomDay">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="機種変更でトリミングの予約帳と写真を引き継ぐ手順">
+<meta property="og:description" content="予約帳・顧客カルテ・料金表・施術前後の写真を、新しいiPhoneへ。バックアップファイルを使う手順と、何が入るのかの正直な内訳。">
+<meta property="og:url" content="https://itzhaolei.github.io/groomday-site/ja/grooming-data-transfer.html">
+<meta property="og:image" content="https://itzhaolei.github.io/groomday-site/img/1-day-iphone.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="apple-touch-icon" href="../img/1-day-iphone.png">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FBFBF8;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#67676F;
+    --line:#E6E6E0;
+    --accent:#1F6B57;
+    --accent-soft:#E9F1EE;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:16.5px/1.8 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;width:100%}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line);background:rgba(251,251,248,.94);position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:19px;color:var(--ink);text-decoration:none}
+  .brand span.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+  nav{display:flex;gap:20px;font-size:14.5px}
+  nav a{color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--ink)}
+  @media (max-width:700px){ nav{display:none} }
+
+  main{padding:48px 0 72px}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.25;letter-spacing:-.02em;margin:0 0 16px}
+  .lede{color:var(--muted);font-size:1.04rem;margin:0 0 24px;max-width:40em}
+  h2{font-size:1.28rem;letter-spacing:-.01em;margin:44px 0 12px;padding-top:6px}
+  h3{font-size:1.02rem;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:24px 0;font-size:15px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0 6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:11px;font-weight:600;font-size:15.5px;border:0;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .fineprint{font-size:13.5px;color:var(--muted);margin-top:10px}
+
+  table.checks{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 6px}
+  table.checks th,table.checks td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left;vertical-align:top}
+  table.checks th{font-size:12.5px;color:var(--muted);font-weight:600}
+  table.checks td.yes{color:var(--accent);font-weight:600;white-space:nowrap}
+  table.checks td.no{color:#8A5A2B;white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="dot"></span>GroomDay</a>
+    <nav>
+      <a href="./">アプリ</a>
+      <a href="grooming-data-transfer.html">機種変更</a>
+      <a href="grooming-record-card.html">無料カルテ</a>
+      <a href="../grooming-day-sheet.html">日別シート</a>
+      <a href="../grooming-price-calculator.html">料金計算</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <span class="eyebrow">機種変更ガイド</span>
+  <h1>機種変更で、予約帳と写真をそのまま引き継ぐ</h1>
+  <p class="lede">ひとりで営むトリミングサロンにとって、いちばん怖いのは「機種変更で予約帳が消える」ことです。GroomDay は、顧客・予約・料金表・設定をひとつのファイルに書き出し、新しい iPhone で読み込んで戻します。このページはその手順と、<b>バージョンごとに何がファイルに入るのか</b>を正直にまとめたものです。</p>
+
+  <h2>まず、何が引き継がれるのか</h2>
+  <table class="checks">
+    <thead>
+      <tr><th>データ</th><th>バックアップファイルの中身</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>顧客（飼い主名・犬名・犬種・連絡先・メモ・ワクチン期限）</td><td class="yes">入ります</td></tr>
+      <tr><td>予約（日時・担当メニュー・金額・状態）</td><td class="yes">入ります</td></tr>
+      <tr><td>料金表（メニュー名・所要時間・価格）</td><td class="yes">入ります</td></tr>
+      <tr><td>設定（通貨・週の始まり・通知など）</td><td class="yes">入ります</td></tr>
+      <tr><td>施術前後の写真</td><td class="no">バージョン 1.4 以降は入ります／1.3 以前は入りません</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <b>1.3 以前をお使いの場合。</b>バックアップファイルには写真そのものが入らず、写真の「ファイル名」だけが記録されます。機種変更後に予約を開くと、写真の位置には <b>Photo missing</b> と表示されます。写真は旧端末の中に残ったままです。<b>1.4 以降</b>では写真も同じファイルに入るため、この制限はありません。
+  </div>
+
+  <h2>引き継ぎの手順（旧端末 → 新端末）</h2>
+  <ol>
+    <li><b>旧端末で書き出す。</b>設定の「<b>バックアップを書き出す</b>」を選ぶと、「ファイル」App の GroomDay フォルダに <code>groomday-backup-20261125-1600.gdbak</code> のようなファイルができます。写真が入る版では、写真の枚数だけファイルが大きくなります（1 枚あたり数 MB が目安）。</li>
+    <li><b>ファイルを新端末へ運ぶ。</b>AirDrop、iCloud Drive、メールの添付、USB ケーブルのどれでも構いません。ファイル App の「この iPhone 内」に置いておくと、次の手順で選びやすくなります。</li>
+    <li><b>新端末に GroomDay を入れる。</b>同じ Apple ID で App Store から再ダウンロードします。買い切りの Pro は同じ Apple ID なら追加課金なしで戻ります。</li>
+    <li><b>読み込んで戻す。</b>設定の「<b>バックアップから復元</b>」を選び、運んできたファイルを選びます。復元は<b>今の端末の中身を置き換える</b>操作なので、確認の画面が一度出ます。</li>
+    <li><b>確認する。</b>顧客数・直近の予約・料金表の価格を開いて、旧端末と同じ数字かを見ます（1.4 以降は写真も開いて確認してください）。</li>
+  </ol>
+
+  <h2>「戻す」を押す前に知っておきたいこと</h2>
+  <p>復元は、いま新端末に入っているデータを置き換えます。空の状態から戻すぶんには問題ありませんが、<b>すでに何件か登録してから別のファイルを戻す</b>と、その何件かは消えます。</p>
+  <p><b>バージョン 1.4 以降</b>では、復元の直前に現在の内容を自動で 1 部だけ控えとして残します。控えは同じ「バックアップから復元」の一覧に <b>復元直前に自動保存</b> というラベルで並ぶので、選び間違えたときはそれを戻せば元に戻ります（控えは最新の 1 回分だけです）。</p>
+  <div class="note">
+    <b>1.3 以前にはこの控えがありません。</b>戻す前に、いまの内容も一度書き出しておくと安全です。ファイルは何本あっても構いません。
+  </div>
+
+  <h2>よくある質問</h2>
+  <h3>iCloud の端末バックアップから戻せば、アプリのデータも戻りますか</h3>
+  <p>iPhone 全体のバックアップから復元すれば、アプリのデータも一緒に戻るのが通常です。ただし、アプリ内の写真はアプリの保存領域に置かれているため、端末のバックアップを経由しない運用（写真だけ別の場所に移す、など）をしていると欠けることがあります。確実なのは、このページの手順で<b>アプリのバックアップファイルを自分で作って運ぶ</b>方法です。</p>
+
+  <h3>ファイルの大きさはどれくらいになりますか</h3>
+  <p>顧客と予約だけなら数百 KB です。写真が入る版では、写真の枚数 × 1 枚あたり数 MB が加わります。500 枚を超えるようなら、書き出しに少し時間がかかります。書き出し中はアプリを閉じないでください。</p>
+
+  <h3>お客様に予約を知らせる文面は引き継がれますか</h3>
+  <p>予約ごとの日時・メニュー・金額は引き継がれます。リマインダーの共有文面は、そのつどアプリが組み立てるため、機種変更の影響を受けません。</p>
+
+  <h3>古い端末は下取りに出しても大丈夫ですか</h3>
+  <p>新端末で顧客・予約・写真が開けることを確認してから初期化してください。逆にすると、控えも含めて全部が旧端末に残ったまま消えます。</p>
+
+  <h2>アプリをまだ入れていない場合</h2>
+  <div class="btn-row">
+    <a class="btn" href="https://apps.apple.com/jp/app/id6827575268">App Store で見る</a>
+    <a class="btn ghost" href="../grooming-day-sheet.html">まず紙の日別シートを試す</a>
+  </div>
+  <p class="fineprint">買い切り（サブスクなし）。無料版でも顧客 8 名まで、予約・カルテ・写真・週次の売上をひととおり使えます。アカウント登録は不要で、データは端末の中だけに保存されます。</p>
+
+  <h2>関連ページ</h2>
+  <ul>
+    <li><a href="grooming-record-card.html">トリミングカルテ 無料テンプレート（A4・印刷用）</a></li>
+    <li><a href="../grooming-day-sheet.html">1 日の予約を 1 枚に：日別シート</a></li>
+    <li><a href="../grooming-price-calculator.html">トリミング料金の計算（時間 × 単価）</a></li>
+    <li><a href="../support.html">サポート・よくある質問</a></li>
+  </ul>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>GroomDay — ひとりサロンのための予約帳アプリ。<a href="../privacy.html">プライバシー</a> · <a href="../support.html">サポート</a> · <a href="./">日本語トップ</a></p>
+  </div>
+</footer>
+</body>
+</html>
