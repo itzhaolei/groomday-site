@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://itzhaolei.github.io/groomday-site/privacy.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -110,6 +110,24 @@
   </url>
   <url>
     <loc>https://itzhaolei.github.io/groomday-site/ko/support.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://itzhaolei.github.io/groomday-site/it/privacy.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://itzhaolei.github.io/groomday-site/ja/privacy.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://itzhaolei.github.io/groomday-site/ko/privacy.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
