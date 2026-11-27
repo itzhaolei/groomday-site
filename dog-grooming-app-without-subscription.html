@@ -86,6 +86,15 @@
   footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}
   footer a{color:var(--muted)}
 
+
+  .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);margin:6px 0 10px;background:var(--card)}
+  .tscroll table{margin:0;border-radius:0}
+  @media (max-width:560px){
+    table{font-size:.86rem}
+    th,td{padding:9px 10px}
+    .tscroll{margin:6px -8px 14px}
+  }
+
   @media print{
     header,footer,.cta,.summary,nav{display:none}
     body{background:#fff}
@@ -122,6 +131,7 @@
 
     <h2>The published monthly prices</h2>
     <p>Entry tier of each vendor, as published. Every one of these is a recurring charge; none of them is a one-time purchase.</p>
+    <div class="tscroll">
     <table>
       <thead>
         <tr><th>Software</th><th class="num">Entry plan</th><th class="num">12 months</th><th class="num">36 months</th></tr>
@@ -133,6 +143,7 @@
         <tr><td>GroomDay</td><td class="num">Free (8 clients)<br>Pro $2.99 once</td><td class="num">$0 – $2.99</td><td class="num">$0 – $2.99</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="src">Sources: daysmart.com/pet/pricing, moego.pet/pricing, groomer.io/pricing, read 27 Nov 2026. DaySmart's lower figure requires using their payment processing; Groomer.io's website option adds $79/month. Vendors change prices — check their pages before you buy. No commission, no affiliate links, nothing paid for placement; the only product this site sells is the one it is about.</p>
 
     <h2>What the monthly fee is actually buying</h2>
@@ -149,6 +160,7 @@
 
     <h2>What a one-time price can and cannot cover</h2>
     <p>A one-time purchase works when the software does not depend on a server the vendor pays for every month. That is the honest boundary:</p>
+    <div class="tscroll">
     <table>
       <thead><tr><th>What you get</th><th>One-time purchase</th><th>Monthly subscription</th></tr></thead>
       <tbody>
@@ -161,6 +173,7 @@
         <tr><td>Cost if the vendor shuts down</td><td>Nothing changes</td><td>You lose the tool</td></tr>
       </tbody>
     </table>
+    </div>
     <p>If you need a client to book herself at 11pm, no one-time app will do it, and a subscription is the correct answer. If what you actually need is to know what today looks like and what you did to that dog last time, the subscription is paying for infrastructure you are not using.</p>
 
     <h2>Six questions to ask before you pay monthly</h2>
